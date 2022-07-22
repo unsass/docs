@@ -14,7 +14,7 @@ Sets media rule for minimum width only.
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.up(lg) {
+    @include breakpoint.up("lg") {
         color: darkcyan;
     }
 }
@@ -36,7 +36,7 @@ Sets media rule for maximum width only.
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.down(lg) {
+    @include breakpoint.down("lg") {
         color: darkcyan;
     }
 }
@@ -59,7 +59,7 @@ of `$token`.
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.only(lg) {
+    @include breakpoint.only("lg") {
         color: darkcyan;
     }
 }
@@ -81,7 +81,7 @@ Sets media rule for between minimum and maximum widths.
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.between(md, xl) {
+    @include breakpoint.between("md", "xl") {
         color: darkcyan;
     }
 }

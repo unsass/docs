@@ -18,7 +18,7 @@ Use `@unsass/breakpoint` inside the project.
 @use "@unsass/breakpoint";
 
 .foo {
-    @include breakpoint.up(lg) {
+    @include breakpoint.up("lg") {
         color: darkcyan;
     }
 }

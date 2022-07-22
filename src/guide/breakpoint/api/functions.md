@@ -14,7 +14,7 @@ Get value from the configured tokens list.
 @use "@unsass/breakpoint";
 
 .foo {
-    width: breakpoint.get-value(lg);
+    width: breakpoint.get-value("lg");
 }
 ```
 
