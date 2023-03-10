@@ -4,5 +4,6 @@
 
 ## Folders
 /.idea
+/.vitepress/cache
 /.vitepress/dist
 /node_modules

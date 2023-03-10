@@ -3,8 +3,8 @@ layout: home
 
 hero:
     name: Unsass
-    text: 
-    tagline:
+    text: The Unified Sass Tools
+    tagline: Find the right tools for right thing
     actions:
         - theme: alt
           text: View on GitHub

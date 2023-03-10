@@ -1,9 +1,14 @@
-module.exports = {
+export default {
     title: 'Unsass',
-    description: 'Just playing around.',
+    description: 'The Unified Sass Tools.',
     srcDir: 'src/',
     themeConfig: {
         nav: [
+            {
+                text: "Breakpoint",
+                activeMatch: `^/breakpoint/`,
+                link: '/breakpoint/'
+            },
             {
                 text: 'Packages',
                 items: [
@@ -29,6 +34,30 @@ module.exports = {
             }
         ],
         sidebar: {
+            'breakpoint': [
+                {
+                    text: 'Getting Started',
+                    items: [
+                        {
+                            text: 'Introduction',
+                            link: '/breakpoint/'
+                        },
+                        {
+                            text: 'Configuration',
+                            link: '/breakpoint/configuration'
+                        }
+                    ]
+                },
+                {
+                    text: 'API',
+                    items: [
+                        {
+                            text: 'Mixins',
+                            link: '/breakpoint/mixins'
+                        }
+                    ]
+                }
+            ],
             '/guide/breakpoint/': [
                 {
                     text: 'Introduction',
