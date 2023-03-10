@@ -1,4 +1,4 @@
-# Getting Started
+# Rem
 
 This section will help you to basically used `@unsass/rem` inside your project.
 
@@ -10,7 +10,7 @@ Add `@unsass/rem` as dependencies for the project.
 npm install @unsass/rem
 ```
 
-## Basic usage
+## Usage
 
 Use `@unsass/rem` inside the project.
 
