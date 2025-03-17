@@ -1,21 +1,22 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "vitepress dev",
-        "prepare": "husky install",
+        "preview": "vitepress preview",
+        "prepare": "husky",
         "build": "vitepress build"
     },
     "engines": {
-        "node": ">=16.0.0",
-        "npm": ">=8.0.0"
+        "node": ">=18"
     },
     "devDependencies": {
-        "@commitlint/cli": "^17.4.4",
-        "@commitlint/config-conventional": "^17.4.4",
-        "@types/node": "^18.15.0",
+        "@commitlint/cli": "^19.8.0",
+        "@commitlint/config-conventional": "^19.8.0",
+        "@types/node": "^22.13.10",
         "@unsass/breakpoint": "^2.2.0",
-        "husky": "^8.0.3",
-        "vitepress": "^1.0.0-alpha.51",
-        "vue": "^3.2.47"
+        "husky": "^9.1.7",
+        "vitepress": "^1.6.3",
+        "vue": "^3.5.13"
     }
 }

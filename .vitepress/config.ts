@@ -1,20 +1,28 @@
-export default {
+import { defineConfig } from 'vitepress';
+
+export default defineConfig({
     title: 'Unsass',
     description: 'The Unified Sass Tools.',
     srcDir: 'src/',
     themeConfig: {
+        search: {
+            provider: 'local'
+        },
         nav: [
             {
-                text: "Breakpoint",
-                activeMatch: `^/breakpoint/`,
-                link: '/breakpoint/'
+                text: 'Home',
+                link: '/'
             },
             {
-                text: 'Packages',
+                text: 'Resources',
                 items: [
                     {
                         text: 'Breakpoint',
                         link: '/guide/breakpoint/getting-started'
+                    },
+                    {
+                        text: 'CSS',
+                        link: '/guide/css/getting-started'
                     },
                     {
                         text: 'Em',
@@ -58,10 +66,33 @@ export default {
                     ]
                 }
             ],
+            '/guide/css': [
+                {
+                    text: 'Introduction',
+                    items: [
+                        {
+                            text: 'Getting Started',
+                            link: '/guide/css/getting-started'
+                        }
+                    ]
+                },
+                {
+                    text: 'API',
+                    items: [
+                        {
+                            text: 'declaration',
+                            link: '/guide/css/api/declaration'
+                        },
+                        {
+                            text: 'selector',
+                            link: '/guide/css/api/selector'
+                        }
+                    ]
+                }
+            ],
             '/guide/breakpoint/': [
                 {
                     text: 'Introduction',
-                    collapsible: true,
                     items: [
                         {
                             text: 'Getting Started',
@@ -79,7 +110,6 @@ export default {
                 },
                 {
                     text: 'API',
-                    collapsible: true,
                     items: [
                         {
                             text: 'Functions',
@@ -95,7 +125,6 @@ export default {
             '/guide/rem/': [
                 {
                     text: 'Introduction',
-                    collapsible: true,
                     items: [
                         {
                             text: 'Getting Started',
@@ -109,7 +138,6 @@ export default {
                 },
                 {
                     text: 'API',
-                    collapsible: true,
                     items: [
                         {
                             text: 'Functions',
@@ -124,4 +152,4 @@ export default {
             ]
         }
     }
-};
+});
