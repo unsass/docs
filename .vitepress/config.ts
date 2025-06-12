@@ -5,13 +5,14 @@ export default defineConfig({
     description: 'The Unified Sass Tools.',
     srcDir: 'src/',
     themeConfig: {
+        outline: 'deep',
         search: {
             provider: 'local'
         },
         nav: [
             {
-                text: 'Home',
-                link: '/'
+                text: 'Guide',
+                link: '/guide/introduction'
             },
             {
                 text: 'Resources',
@@ -42,12 +43,46 @@ export default defineConfig({
             }
         ],
         sidebar: {
-            'breakpoint': [
+            '/guide': [
                 {
-                    text: 'Getting Started',
+                    text: 'Overview',
                     items: [
                         {
                             text: 'Introduction',
+                            link: '/introduction/'
+                        }
+                    ]
+                },
+                {
+                    text: 'Resources',
+                    items: [
+                        {
+                            text: 'CSS',
+                            link: '/guide/css'
+                        },
+                        {
+                            text: 'Breakpoint',
+                            link: '/guide/breakpoint'
+                        },
+                        {
+                            text: 'Rem',
+                            link: '/guide/rem'
+                        },
+                        {
+                            text: 'Em',
+                            link: '/guide/em'
+                        },
+                        {
+                            text: 'Selector',
+                            link: '/guide/selector'
+                        }
+                    ]
+                },
+                {
+                    text: 'CSS',
+                    items: [
+                        {
+                            text: 'Getting Started',
                             link: '/breakpoint/'
                         },
                         {
@@ -57,15 +92,43 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: 'API',
+                    text: 'Rem',
                     items: [
                         {
-                            text: 'Mixins',
-                            link: '/breakpoint/mixins'
+                            text: 'Getting Started',
+                            link: '/breakpoint/'
+                        },
+                        {
+                            text: 'Configuration',
+                            link: '/breakpoint/configuration'
                         }
                     ]
                 }
             ],
+            // 'breakpoint': [
+            //     {
+            //         text: 'Getting Started',
+            //         items: [
+            //             {
+            //                 text: 'Introduction',
+            //                 link: '/breakpoint/'
+            //             },
+            //             {
+            //                 text: 'Configuration',
+            //                 link: '/breakpoint/configuration'
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         text: 'API',
+            //         items: [
+            //             {
+            //                 text: 'Mixins',
+            //                 link: '/breakpoint/mixins'
+            //             }
+            //         ]
+            //     }
+            // ],
             '/guide/css': [
                 {
                     text: 'Introduction',
@@ -90,38 +153,38 @@ export default defineConfig({
                     ]
                 }
             ],
-            '/guide/breakpoint/': [
-                {
-                    text: 'Introduction',
-                    items: [
-                        {
-                            text: 'Getting Started',
-                            link: 'guide/breakpoint/getting-started'
-                        },
-                        {
-                            text: 'Configuration',
-                            link: 'guide/breakpoint/configuration'
-                        },
-                        {
-                            text: 'Changelog',
-                            link: 'guide/breakpoint/changelog'
-                        }
-                    ]
-                },
-                {
-                    text: 'API',
-                    items: [
-                        {
-                            text: 'Functions',
-                            link: 'guide/breakpoint/api/functions'
-                        },
-                        {
-                            text: 'Mixins',
-                            link: 'guide/breakpoint/api/mixins'
-                        }
-                    ]
-                }
-            ],
+            // '/guide/breakpoint/': [
+            //     {
+            //         text: 'Introduction',
+            //         items: [
+            //             {
+            //                 text: 'Getting Started',
+            //                 link: 'guide/breakpoint/getting-started'
+            //             },
+            //             {
+            //                 text: 'Configuration',
+            //                 link: 'guide/breakpoint/configuration'
+            //             },
+            //             {
+            //                 text: 'Changelog',
+            //                 link: 'guide/breakpoint/changelog'
+            //             }
+            //         ]
+            //     },
+            //     {
+            //         text: 'API',
+            //         items: [
+            //             {
+            //                 text: 'Functions',
+            //                 link: 'guide/breakpoint/api/functions'
+            //             },
+            //             {
+            //                 text: 'Mixins',
+            //                 link: 'guide/breakpoint/api/mixins'
+            //             }
+            //         ]
+            //     }
+            // ],
             '/guide/rem/': [
                 {
                     text: 'Introduction',
@@ -141,11 +204,11 @@ export default defineConfig({
                     items: [
                         {
                             text: 'Functions',
-                            link: 'guide/rem/api/functions'
+                            link: '/guide/rem/api/functions'
                         },
                         {
                             text: 'Mixins',
-                            link: 'guide/rem/api/mixins'
+                            link: '/guide/rem/api/mixins'
                         }
                     ]
                 }
