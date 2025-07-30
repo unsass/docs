@@ -18,6 +18,26 @@ yarn add @unsass/selector
 
 :::
 
+## Usage
+
+::: code-group
+
+```scss [Scss]
+@use "@unsass/selector";
+
+@include selector.create("foo", "md") {
+    color: darkcyan;
+}
+```
+
+```css [CSS]
+.md\:foo {
+    color: darkcyan;
+}
+```
+
+:::
+
 ## API References
 
 ### `create()`

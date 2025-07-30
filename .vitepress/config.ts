@@ -49,7 +49,7 @@ export default defineConfig({
                     items: [
                         {
                             text: 'Introduction',
-                            link: '/introduction/'
+                            link: '/guide/introduction/'
                         }
                     ]
                 },

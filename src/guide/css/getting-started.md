@@ -7,8 +7,12 @@ This documentation will help you to basically used `@unsass/css` inside your pro
 Add `@unsass/css` as dependencies for the project.
 
 ::: code-group
-```shell
+```npm
 npm install @unsass/css
+```
+
+```yarn
+yarn add @unsass/css
 ```
 :::
 

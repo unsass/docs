@@ -7,7 +7,7 @@ hero:
     tagline: Find the right tools for right thing
     actions:
         - theme: brand
-          text: Getting Started
+          text: Get Started
           link: /guide/introduction
         - theme: alt
           text: View on GitHub
