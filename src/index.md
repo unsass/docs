@@ -4,7 +4,7 @@ layout: home
 hero:
     name: Unsass
     text: The Unified Sass Tools
-    tagline: Find the right tools for right thing
+    tagline: Use the right tools to do the right thing.
     actions:
         - theme: brand
           text: Get Started
