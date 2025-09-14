@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-    title: 'Unsass',
+    title: 'UnSass',
     description: 'The Unified Sass Tools.',
     srcDir: 'src/',
     themeConfig: {
@@ -9,6 +9,7 @@ export default defineConfig({
         search: {
             provider: 'local'
         },
+        logo: '/logo.png',
         nav: [
             {
                 text: 'Guide',

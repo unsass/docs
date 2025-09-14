@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-    name: Unsass
+    name: UnSass
     text: The Unified Sass Tools
     tagline: Use the right tools to do the right thing.
     actions:
