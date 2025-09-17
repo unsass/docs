@@ -1,14 +1,21 @@
-# Getting Started
+# CSS
 
-This documentation will help you to basically used `@unsass/css` inside your project.
+A set of Sass mixins to help manage CSS declarations consistently, with built-in support for defining and using custom
+properties.
 
-## Installing
+Check the repo here: [https://github.com/unsass/css](https://github.com/unsass/css).
+
+## Install
 
 Add `@unsass/css` as dependencies for the project.
 
 ::: code-group
-```shell
+```npm
 npm install @unsass/css
+```
+
+```yarn
+yarn add @unsass/css
 ```
 :::
 

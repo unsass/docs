@@ -1,12 +1,13 @@
 # Configuration
 
-This section will help you to configure `@unsass/breakpoint`.
+This section will help you to right configure the module for your project.
 
 ## `$screens`
 
-**Override default token...**
+You can override existing values or add new ones to extend the default sizes list.
 
-```scss
+::: code-group
+```scss [override]
 @use "@unsass/breakpoint" with (
     $screens: (
         "lg": 1024px
@@ -14,19 +15,30 @@ This section will help you to configure `@unsass/breakpoint`.
 );
 ```
 
-**...or define new one.**
-
-```scss
+```scss [add new size]
 @use "@unsass/breakpoint" with (
     $screens: (
         "3xl": 1920px
     )
 );
 ```
+:::
+
+**Default tokens**
+
+| Key   | Value    | Description                                          |
+|-------|----------|------------------------------------------------------|
+| `xs`  | `360px`  | Extra small screen.                                  |
+| `sm`  | `480px`  | Standard mobile screen.                              |
+| `md`  | `768px`  | mobile on landscape mode or tablet on portrait mode. |
+| `lg`  | `960px`  | Desktop or tablet on landscape mode.                 |
+| `xl`  | `1200px` | Large desktop screen.                                |
+| `2xl` | `1400px` | Extra large desktop screen.                          |
+
 
 ## `$reset`
 
-Erase the default `$screens` config for helping you on a fresh start with your own custom tokens.
+Clears the default `$screens` configuration to provide a clean slate for defining your own custom tokens.
 
 ```scss
 @use "@unsass/breakpoint" with (
@@ -38,32 +50,23 @@ Erase the default `$screens` config for helping you on a fresh start with your o
 );
 ```
 
-## Top-level config
-
-If variables are already configured on top-level using `@use ... with`, by another dependency for example, you can't use
-this solution anymore, because the module can only be setup once, this is a Sass restriction with **Module System**, but
-another solution exist for override the main configuration, with a mixin!
-
-::: info
-See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
-with mixins.
-:::
-
-### `config($screens, $reset)`
+## `config($screens, $reset)`
 
 The following Sass will configure new parameters:
 
 ```scss
 @use "@unsass/breakpoint";
 
-// Extend the default list...
 @include breakpoint.config((
-    "3xl": 1980px
+    "lg": 1024px
 ));
-
-// ... or reset for fresh start...
-@include breakpoint.config((
-    "tablet": 768px,
-    "desktop": 960px
-), true);
 ```
+
+::: info
+If variables are already configured on top-level using `@use ... with`, by another dependency, for example, you can't
+use this solution anymore. This is because the module can only be set up once, this is a Sass restriction with **Module
+System**, but another solution exists for override the main configuration, with a mixin!
+
+See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
+with mixins.
+:::

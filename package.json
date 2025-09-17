@@ -4,8 +4,8 @@
     "scripts": {
         "dev": "vitepress dev",
         "preview": "vitepress preview",
-        "prepare": "husky",
-        "build": "vitepress build"
+        "build": "vitepress build",
+        "prepare": "husky"
     },
     "engines": {
         "node": ">=20"
@@ -13,10 +13,7 @@
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
         "@commitlint/config-conventional": "^19.8.1",
-        "@types/node": "^24.0.1",
-        "@unsass/breakpoint": "^2.2.0",
         "husky": "^9.1.7",
-        "vitepress": "^1.6.3",
-        "vue": "^3.5.16"
+        "vitepress": "^2.0.0-alpha.12"
     }
 }
