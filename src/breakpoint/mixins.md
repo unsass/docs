@@ -1,11 +1,14 @@
-# Mixins
+# Mixins <Badge type="tip" text="API"/>
 
-This section will help you to use `@unsass/breakpoint` mixins.
+This section provides comprehensive guidance on how to effectively use breakpoint mixins for managing responsive CSS
+and maintaining consistency throughout your project.
 
 ## `up($token)`
 
-Sets media rule for minimum width only.
+Applies a media query rule for minimum width only, focusing on devices with screen sizes equal to or larger than the
+specified breakpoint.
 
+::: code-group
 ```scss
 @use "@unsass/breakpoint";
 
@@ -16,8 +19,6 @@ Sets media rule for minimum width only.
 }
 ```
 
-**Result**
-
 ```css
 @media (min-width: 960px) {
     .foo {
@@ -25,11 +26,14 @@ Sets media rule for minimum width only.
     }
 }
 ```
+:::
 
 ## `down($token)`
 
-Sets media rule for maximum width only.
+Applies a media query rule for maximum width only, focusing on devices with screen sizes smaller than the specified
+breakpoint.
 
+::: code-group
 ```scss
 @use "@unsass/breakpoint";
 
@@ -40,8 +44,6 @@ Sets media rule for maximum width only.
 }
 ```
 
-**Result**
-
 ```css
 @media (max-width: 959px) {
     .foo {
@@ -49,12 +51,14 @@ Sets media rule for maximum width only.
     }
 }
 ```
+:::
 
 ## `only($token)`
 
-Sets media rule for between minimum and maximum widths, but the maximum will be automatically set with next value
-of `$token`.
+Applies a media query rule for a specific breakpoint range, automatically setting the minimum width to the specified
+token and the maximum width to just before the next breakpoint value.
 
+::: code-group
 ```scss
 @use "@unsass/breakpoint";
 
@@ -65,8 +69,6 @@ of `$token`.
 }
 ```
 
-**Result**
-
 ```css
 @media (min-width: 960px) and (max-width: 1199px) {
     .foo {
@@ -74,11 +76,14 @@ of `$token`.
     }
 }
 ```
+:::
 
 ## `between($token)`
 
-Sets media rule for between minimum and maximum widths.
+Applies a media query rule for a custom range between two specified breakpoints, allowing precise control over the
+minimum and maximum widths.
 
+::: code-group
 ```scss
 @use "@unsass/breakpoint";
 
@@ -89,8 +94,6 @@ Sets media rule for between minimum and maximum widths.
 }
 ```
 
-**Result**
-
 ```css
 @media (min-width: 768px) and (max-width: 1199px) {
     .foo {
@@ -98,3 +101,4 @@ Sets media rule for between minimum and maximum widths.
     }
 }
 ```
+:::

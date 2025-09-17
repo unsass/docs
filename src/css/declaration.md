@@ -1,10 +1,8 @@
-# API: declaration
+# `declaration` <Badge type="tip" text="API"/>
 
-The mixin `declaration()` help to easily manage CSS declaration.
+The `declaration()` mixin helps manage CSS declarations more easily.
 
 ## Parameters
-
-The mixin has many options and is written like this: `declaration($property, $value, $important)`.
 
 | Parameter    | Description              | Default     |
 |--------------|--------------------------|-------------|
@@ -13,8 +11,6 @@ The mixin has many options and is written like this: `declaration($property, $va
 | `$important` | Enable the `!important`. | `false`     |
 
 ## Usage
-
-#### Classic
 
 ::: code-group
 ```scss
@@ -34,7 +30,7 @@ The mixin has many options and is written like this: `declaration($property, $va
 ```
 :::
 
-#### Option `!important`
+### `!important`
 
 ::: code-group
 ```scss

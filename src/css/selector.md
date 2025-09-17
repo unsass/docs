@@ -1,6 +1,6 @@
-# API: selector
+# `selector` <Badge type="tip" text="API"/>
 
-The mixin `selector()` help to easily manage suffix and prefix in CSS selector classes and IDs.
+The `selector()` mixin helps manage prefixes and suffixes in CSS class and ID selectors.
 
 ## Parameters
 
@@ -13,15 +13,13 @@ The mixin `selector()` help to easily manage suffix and prefix in CSS selector c
 
 ## Usage
 
-#### Classic
-
 ::: code-group
 ```scss
 @use "@unsass/css";
 
 .foo {
     color: darkorange;
-    
+
     @include css.selector("md") {
         color: darkcyan;
     }
@@ -39,7 +37,7 @@ The mixin `selector()` help to easily manage suffix and prefix in CSS selector c
 ```
 :::
 
-#### Custom separator
+### Custom separator
 
 ::: code-group
 ```scss
@@ -59,7 +57,7 @@ The mixin `selector()` help to easily manage suffix and prefix in CSS selector c
 ```
 :::
 
-#### Suffix
+### Suffix
 
 ::: code-group
 ```scss
@@ -79,7 +77,7 @@ The mixin `selector()` help to easily manage suffix and prefix in CSS selector c
 ```
 :::
 
-#### Custom selector 
+### Custom selector
 
 ::: code-group
 ```scss
