@@ -26,6 +26,10 @@ export default defineConfig({
                     {
                         text: 'CSS',
                         link: '/css/getting-started'
+                    },
+                    {
+                        text: 'Rem',
+                        link: '/rem/getting-started'
                     }
                 ]
             }
@@ -75,6 +79,30 @@ export default defineConfig({
                         {
                             text: 'Selector',
                             link: '/css/selector'
+                        }
+                    ]
+                }
+            ],
+            '/rem': [
+                {
+                    text: 'Introduction',
+                    items: [
+                        {
+                            text: 'Getting Started',
+                            link: '/rem/getting-started'
+                        },
+                        {
+                            text: 'Configuration',
+                            link: '/rem/configuration'
+                        }
+                    ]
+                },
+                {
+                    text: 'API',
+                    items: [
+                        {
+                            text: 'Mixins',
+                            link: '/rem/mixins'
                         }
                     ]
                 }
