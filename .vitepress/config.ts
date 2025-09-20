@@ -5,6 +5,15 @@ export default defineConfig({
     srcDir: 'src',
     title: 'UnSass',
     description: 'The Unified Sass Tools.',
+    head: [
+        [
+            'link',
+            {
+                rel: 'icon',
+                href: '/favicon.ico'
+            }
+        ]
+    ],
     themeConfig: {
         outline: [2, 3],
         search: {
