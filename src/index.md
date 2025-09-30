@@ -12,6 +12,9 @@ hero:
       
 features:
   - icon: 🛠️
+    title: REM
+    details: Manage the font size of your project!
+  - icon: 🛠️
     title: Breakpoint
     details: Manage CSS breakpoints across your project!
   - icon: 🛠️

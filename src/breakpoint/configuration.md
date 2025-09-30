@@ -62,7 +62,7 @@ The following Sass will configure new parameters:
 ));
 ```
 
-::: info
+::: tip
 If variables are already configured on top-level using `@use ... with`, by another dependency, for example, you can't
 use this solution anymore. This is because the module can only be set up once, this is a Sass restriction with **Module
 System**, but another solution exists for override the main configuration, with a mixin!

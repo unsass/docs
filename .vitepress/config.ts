@@ -15,7 +15,10 @@ export default defineConfig({
         ]
     ],
     themeConfig: {
-        outline: [2, 3],
+        outline: [
+            2,
+            3
+        ],
         search: {
             provider: 'local'
         },
@@ -62,7 +65,7 @@ export default defineConfig({
                     text: 'API',
                     items: [
                         {
-                            text: 'Mixins',
+                            text: 'Application',
                             link: '/breakpoint/mixins'
                         }
                     ]
@@ -110,7 +113,7 @@ export default defineConfig({
                     text: 'API',
                     items: [
                         {
-                            text: 'Mixins',
+                            text: 'Application',
                             link: '/rem/mixins'
                         }
                     ]

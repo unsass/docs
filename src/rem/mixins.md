@@ -1,107 +1,151 @@
-# Mixins
+# Application API
 
-## `declaration($property, $value, $important)`
+## declaration()
 
 Sets declaration with conversion of `px` unit to `rem`, with optional `!important`
 
-#### Arguments
+- **Arguments**
 
-| Argument     | Default | Description                       |
-|--------------|---------|-----------------------------------|
-| `$property`  | null    | Mandatory. The CSS property name. |
-| `$value`     | null    | Mandatory. The property value.    |
-| `$important` | false   | Enable the `!important` option.   |
+    | Argument     | Default | Type    | Description                       |
+    |--------------|---------|---------|-----------------------------------|
+    | `$property`  | null    | String  | Mandatory. The CSS property name. |
+    | `$value`     | null    | String  | Mandatory. The property value.    |
+    | `$important` | false   | Boolean | Enable the `!important` option.   |
 
-#### Single value
+- **Details**
 
-::: code-group
-```scss
-@use "@unsass/rem";
+    ```scss
+    @include rem.declaration($property: String, $value: String, $important: Boolean);
+    ```
+  
+- **Examples**
 
-.foo {
-    @include rem.declaration(font-size, 16px);
-}
-```
+    Single value
 
-```css
-.foo {
-    font-size: 1rem;
-}
-```
-:::
+    ::: code-group
+    ```scss
+    @use "@unsass/rem";
+    
+    .foo {
+        @include rem.declaration(font-size, 16px);
+    }
+    ```
 
-#### Multiple values
+    ```css
+    .foo {
+        font-size: 1rem;
+    }
+    ```
+    :::
 
-::: code-group
-```scss
-@use "@unsass/rem";
+    Multiple values
 
-.foo {
-    @include rem.declaration(margin, 20px 30px);
-}
-```
+    ::: code-group
+    ```scss
+    @use "@unsass/rem";
+    
+    .foo {
+        @include rem.declaration(margin, 20px 30px);
+    }
+    ```
+    
+    ```css
+    .foo {
+        margin: 1.25rem 1.875rem;
+    }
+    ```
+    :::
 
-```css
-.foo {
-    margin: 1.25rem 1.875rem;
-}
-```
-:::
+    Multiple mixed values
 
-#### Multiple mixed values
+    ::: code-group
+    ```scss
+    @use "@unsass/rem";
+    
+    .foo {
+        @include rem.declaration(border, 1px solid darkcyan);
+    }
+    ```
+    
+    ```css
+    .foo {
+        border: 0.0625rem solid darkcyan;
+    }
+    ```
+    :::
 
-::: code-group
-```scss
-@use "@unsass/rem";
+    Comma-separated values
 
-.foo {
-    @include rem.declaration(border, 1px solid darkcyan);
-}
-```
+    ::: code-group
+    ```scss
+    @use "@unsass/rem";
+    
+    .foo {
+        @include rem.declaration(box-shadow, 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
+    }
+    ```
+    
+    ```css
+    .foo {
+        box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+    }
+    ```
+    :::
 
-```css
-.foo {
-    border: 0.0625rem solid darkcyan;
-}
-```
-:::
-
-####  Comma-separated values
-
-::: code-group
-```scss
-@use "@unsass/rem";
-
-.foo {
-    @include rem.declaration(box-shadow, 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
-}
-```
-
-```css
-.foo {
-    box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
-}
-```
-:::
-
-## `baseline($important: false)`
+## baseline()
 
 Sets declaration with `font-size` property, with optional `!important`.
 
-::: code-group
-```scss
-@use "@unsass/rem";
+- **Arguments**
 
-html,
-body {
-    @include rem.baseline;
-}
-```
+    | Argument     | Default | Type    | Description                       |
+    |--------------|---------|---------|-----------------------------------|
+    | `$important` | false   | Boolean | Enable the `!important` option.   |
 
-```css
-html,
-body {
-    font-size: 100%;
-}
-```
-:::
+- **Details**
+
+    ```scss
+    @include rem.baseline($important: Boolean);
+    ```
+
+- **Example**
+
+    General
+
+    ::: code-group
+    ```scss
+    @use "@unsass/rem";
+    
+    html,
+    body {
+        @include rem.baseline($important: false);
+    }
+    ```
+    
+    ```css
+    html,
+    body {
+        font-size: 100%;
+    }
+    ```
+    :::
+
+    With `!important`
+
+    ::: code-group
+    ```scss
+    @use "@unsass/rem";
+    
+    html,
+    body {
+        @include rem.baseline($important: true);
+    }
+    ```
+    
+    ```css
+    html,
+    body {
+        font-size: 100% !important;
+    }
+    ```
+    :::
