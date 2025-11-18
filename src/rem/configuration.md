@@ -8,7 +8,7 @@ Sets baseline reference. Only in `px`. Default is `16px`.
 
 ```scss
 @use "@unsass/rem" with (
-    $baseline: 10px
+    $baseline: 16px
 );
 ```
 
@@ -19,7 +19,7 @@ The following Sass will configure new parameters:
 ```scss
 @use "@unsass/rem";
 
-@include rem.config(10px);
+@include rem.config(16px);
 ```
 
 ::: tip

@@ -29,7 +29,20 @@ export default defineConfig({
                 link: '/'
             },
             {
-                text: 'Components',
+                text: 'Guide',
+                items: [
+                    {
+                        text: 'Introduction',
+                        link: '/guide/introduction'
+                    },
+                    {
+                        text: 'Best Practices',
+                        link: '/guide/best-practices'
+                    }
+                ]
+            },
+            {
+                text: 'Packages',
                 items: [
                     {
                         text: 'Breakpoint',
@@ -47,6 +60,38 @@ export default defineConfig({
             }
         ],
         sidebar: {
+            '/guide': [
+                {
+                    text: 'Getting Started',
+                    items: [
+                        {
+                            text: 'Introduction',
+                            link: '/guide/introduction'
+                        },
+                        {
+                            text: 'Best Practices',
+                            link: '/guide/best-practices'
+                        }
+                    ]
+                },
+                {
+                    text: 'Packages',
+                    items: [
+                        {
+                            text: 'Breakpoint',
+                            link: '/breakpoint/getting-started'
+                        },
+                        {
+                            text: 'CSS',
+                            link: '/css/getting-started'
+                        },
+                        {
+                            text: 'Rem',
+                            link: '/rem/getting-started'
+                        }
+                    ]
+                }
+            ],
             '/breakpoint': [
                 {
                     text: 'Introduction',
@@ -58,6 +103,10 @@ export default defineConfig({
                         {
                             text: 'Configuration',
                             link: '/breakpoint/configuration'
+                        },
+                        {
+                            text: 'Best Practices',
+                            link: '/breakpoint/best-practices'
                         }
                     ]
                 },
@@ -65,7 +114,7 @@ export default defineConfig({
                     text: 'API',
                     items: [
                         {
-                            text: 'Application',
+                            text: 'Mixins',
                             link: '/breakpoint/mixins'
                         }
                     ]
@@ -106,6 +155,10 @@ export default defineConfig({
                         {
                             text: 'Configuration',
                             link: '/rem/configuration'
+                        },
+                        {
+                            text: 'Best Practices',
+                            link: '/rem/best-practices'
                         }
                     ]
                 },
@@ -113,7 +166,7 @@ export default defineConfig({
                     text: 'API',
                     items: [
                         {
-                            text: 'Application',
+                            text: 'Mixins',
                             link: '/rem/mixins'
                         }
                     ]
