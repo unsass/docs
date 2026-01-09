@@ -8,7 +8,7 @@ Use the same base size throughout your project:
 
 ```scss
 @use "@unsass/rem" with (
-  $base-size: 16px  // Browser default
+  $baseline: 16px  // Browser default
 );
 ```
 
@@ -21,12 +21,12 @@ Use the same base size throughout your project:
 ```scss
 // ❌ Avoid non-standard base sizes
 @use "@unsass/rem" with (
-  $base-size: 10px  // Makes math easier but breaks user preferences
+  $baseline: 10px  // Makes math easier but breaks user preferences
 );
 
 // ✅ Good - Standard base size
 @use "@unsass/rem" with (
-  $base-size: 16px
+  $baseline: 16px
 );
 ```
 
