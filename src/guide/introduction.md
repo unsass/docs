@@ -6,10 +6,11 @@ Welcome to UnSass, a collection of modern Sass utilities designed to streamline 
 
 UnSass is a suite of modular Sass tools that help you write cleaner, more maintainable stylesheets. Each package focuses on solving specific CSS challenges:
 
-- **[@unsass/breakpoint](https://github.com/unsass/breakpoint)** - Responsive design made easy
-- **[@unsass/css](https://github.com/unsass/css)** - CSS declarations and custom properties
-- **[@unsass/rem](https://github.com/unsass/rem)** - Pixel to rem conversion
-- **[@unsass/selector](https://github.com/unsass/selector)** - Prefixed selector generation
+- **[@unsass/breakpoint](https://github.com/unsass/breakpoint)** - Responsive design made easy.
+- **[@unsass/css](https://github.com/unsass/css)** - CSS declarations and custom properties.
+- **[@unsass/em](https://github.com/unsass/em)** - Pixel to em conversion.
+- **[@unsass/rem](https://github.com/unsass/rem)** - Pixel to rem conversion.
+- **[@unsass/selector](https://github.com/unsass/selector)** - Prefixed selector generation.
 
 ## Key Features
 
