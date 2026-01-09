@@ -1,7 +1,10 @@
 # Breakpoint
 
-Provides a consistent way to manage CSS breakpoints across your project, ensuring responsive styles are applied
-reliably.
+Breakpoint is a small, dependency-free Sass toolkit for managing responsive breakpoints. Define named breakpoints
+centrally and apply them with concise, composable mixins and helpers so media-query logic stays readable and consistent.
+
+Designed for predictable, testable responsive behavior: supports named breakpoints, logical operators (min/max/between),
+and composition of queries so you can reuse breakpoint semantics across your stylesheets without duplicating values.
 
 Check the repo here: [https://github.com/unsass/breakpoint](https://github.com/unsass/breakpoint).
 
