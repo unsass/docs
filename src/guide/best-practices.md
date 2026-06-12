@@ -29,7 +29,7 @@ Configure packages when importing rather than using global variables:
 ```scss
 // ✅ Good
 @use "@unsass/breakpoint" with (
-  $breakpoints: (sm: 640px, md: 768px)
+  $screens: (sm: 640px, md: 768px)
 );
 
 // ❌ Avoid
@@ -44,7 +44,7 @@ Create a central configuration file:
 ```scss
 // styles/_config.scss
 @forward "@unsass/breakpoint" with (
-  $breakpoints: (sm: 640px, md: 768px, lg: 1024px)
+  $screens: (sm: 640px, md: 768px, lg: 1024px)
 );
 
 @forward "@unsass/rem" with (

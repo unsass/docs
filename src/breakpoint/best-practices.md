@@ -41,7 +41,7 @@ Choose meaningful names for custom breakpoints:
 ```scss
 // ✅ Good
 @use "@unsass/breakpoint" with (
-  $breakpoints: (
+  $screens: (
     "mobile": 375px,
     "tablet": 768px,
     "desktop": 1024px,
@@ -51,7 +51,7 @@ Choose meaningful names for custom breakpoints:
 
 // ❌ Avoid
 @use "@unsass/breakpoint" with (
-  $breakpoints: (
+  $screens: (
     "tiny": 375px,
     "small": 768px,
     "big": 1024px
@@ -91,7 +91,7 @@ Stick to common device widths:
 
 ```scss
 @use "@unsass/breakpoint" with (
-  $breakpoints: (
+  $screens: (
     "sm": 640px,   // Mobile landscape
     "md": 768px,   // Tablet portrait
     "lg": 1024px,  // Tablet landscape / Small desktop

@@ -28,7 +28,7 @@ You can override existing values or add new ones to extend the default sizes lis
 
 | Key   | Value    | Description                                          |
 |-------|----------|------------------------------------------------------|
-| `xs`  | `360px`  | Extra small screen.                                  |
+| `xs`  | `320px`  | Extra small screen.                                  |
 | `sm`  | `480px`  | Standard mobile screen.                              |
 | `md`  | `768px`  | mobile on landscape mode or tablet on portrait mode. |
 | `lg`  | `960px`  | Desktop or tablet on landscape mode.                 |

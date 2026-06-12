@@ -24,6 +24,10 @@ yarn add @unsass/breakpoint
 
 :::
 
+::: warning Requirement
+Breakpoint relies on the modern Sass `if()` syntax, so a Dart Sass compiler `>=1.95.0` is required in your project.
+:::
+
 ## Basic usage
 
 Use `@unsass/breakpoint` inside the project.
