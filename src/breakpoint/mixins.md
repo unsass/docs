@@ -39,7 +39,7 @@ Applies a `min-width` media query — styles take effect at the token width and 
 ## `down($token)` <Badge type="tip" text="mixin" />
 
 Applies a `max-width` media query — styles take effect below the token width. The maximum is the token value minus
-`1px` to avoid overlap with `up()`.
+`0.02px` to avoid overlap with `up()` on sub-pixel viewports.
 
 | Parameter | Type     | Default | Description                        |
 |-----------|----------|---------|------------------------------------|
@@ -58,7 +58,7 @@ Applies a `max-width` media query — styles take effect below the token width. 
 ```
 
 ```css [CSS]
-@media (max-width: 959px) {
+@media (max-width: 959.98px) {
     .foo {
         color: darkcyan;
     }
@@ -89,7 +89,7 @@ falls back to `up()`.
 ```
 
 ```css [CSS]
-@media (min-width: 960px) and (max-width: 1199px) {
+@media (min-width: 960px) and (max-width: 1199.98px) {
     .foo {
         color: darkcyan;
     }
@@ -100,7 +100,8 @@ falls back to `up()`.
 
 ## `between($min, $max)` <Badge type="tip" text="mixin" />
 
-Targets a custom range between two tokens. The upper bound is the `$max` token value minus `1px`.
+Targets a custom range between two tokens. The upper bound is the `$max` token value minus `0.02px`. `$min` must be
+smaller than `$max`, otherwise the mixin raises an `@error`.
 
 | Parameter | Type     | Default | Description                          |
 |-----------|----------|---------|--------------------------------------|
@@ -120,7 +121,7 @@ Targets a custom range between two tokens. The upper bound is the `$max` token v
 ```
 
 ```css [CSS]
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
     .foo {
         color: darkcyan;
     }

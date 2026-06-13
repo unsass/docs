@@ -1,5 +1,5 @@
 ---
-description: "Reference for @unsass/breakpoint functions: get-value, get-next and get-screens for reading the configured breakpoint tokens."
+description: "Reference for @unsass/breakpoint functions: get-value, get-next, get-prev and get-screens for reading the configured breakpoint tokens."
 ---
 
 # Functions
@@ -9,7 +9,7 @@ and back the [mixins](/breakpoint/mixins) — useful when you need a raw value o
 
 ## `get-value($token)` <Badge type="tip" text="function" />
 
-Returns the configured width for a token.
+Returns the configured width for a token, or `null` when the token is unknown.
 
 | Parameter | Type     | Default | Description                        |
 |-----------|----------|---------|------------------------------------|
@@ -21,7 +21,7 @@ breakpoint.get-value("lg"); // 960px
 
 ## `get-next($value)` <Badge type="tip" text="function" />
 
-Returns the key of the token that follows the given one, or `null` for the last token.
+Returns the key of the token that follows the given one, or `null` for the last or an unknown token.
 
 | Parameter | Type     | Default | Description       |
 |-----------|----------|---------|-------------------|
@@ -29,6 +29,18 @@ Returns the key of the token that follows the given one, or `null` for the last 
 
 ```scss
 breakpoint.get-next("lg"); // "xl"
+```
+
+## `get-prev($value)` <Badge type="tip" text="function" />
+
+Returns the key of the token that precedes the given one, or `null` for the first or an unknown token.
+
+| Parameter | Type     | Default | Description       |
+|-----------|----------|---------|-------------------|
+| `$value`  | `string` | —       | A token key.      |
+
+```scss
+breakpoint.get-prev("lg"); // "md"
 ```
 
 ## `get-screens($exclude...)` <Badge type="tip" text="function" />
