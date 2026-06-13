@@ -1,26 +1,43 @@
 ---
 layout: home
+description: "UnSass is a suite of small, dependency-free Sass utilities — breakpoint, css, em, rem and selector. Install only what you need."
 
 hero:
   name: "UnSass"
-  text: "The Unified Sass Tools."
-  tagline: The right tools to do the right thing.
+  text: "Standalone Sass utilities, à la carte."
+  tagline: "Modular. Validated. Dependency-free."
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/introduction
+      link: /guide/what-is-unsass
     - theme: alt
-      text: View on GitHub
+      text: Github
       link: https://github.com/unsass
 
 features:
-  - icon: 📐
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M12 5v12"/><path d="M7 9l-2 2 2 2M17 9l2 2-2 2"/></svg>'
     title: Breakpoint
-    details: Manage CSS breakpoints across your project with flexible mixins and configuration.
-  - icon: 📝
+    details: Centralize named breakpoints and apply them with composable min, max, only and between mixins.
+    link: /breakpoint/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 0-3 1-3 3v2c0 1-1 2-2 2 1 0 2 1 2 2v2c0 2 1 3 3 3"/><path d="M16 4c2 0 3 1 3 3v2c0 1 1 2 2 2-1 0-2 1-2 2v2c0 2-1 3-3 3"/></svg>'
     title: CSS
-    details: Manage CSS declarations consistently with built-in support for custom properties.
-  - icon: 📏
+    details: Emit declarations and selectors consistently, with first-class support for custom properties.
+    link: /css/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>'
+    title: Em
+    details: Convert pixel values to context-relative em units, with the context explicit at every call.
+    link: /em/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="8" y="5" width="8" height="8" rx="1"/><path d="M12 13v7"/></svg>'
     title: Rem
-    details: Convert pixel values to rem units effortlessly with configurable base sizes.
+    details: Convert pixel values to rem units against a single, configurable document baseline.
+    link: /rem/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l6 16 2.2-6.2L19.5 11.5z"/></svg>'
+    title: Selector
+    details: Build prefixed, suffixed and pseudo selectors from a single, expressive mixin.
+    link: /selector/getting-started
+    linkText: Read the docs
 ---

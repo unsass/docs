@@ -1,13 +1,19 @@
+---
+description: "Configure @unsass/breakpoint: override or extend breakpoint tokens with $screens, $reset and the config() mixin."
+---
+
 # Configuration
 
-This section will help you to right configure the module for your project.
+Breakpoint ships with a default set of tokens that you can override, extend, or replace entirely.
 
 ## `$screens`
 
-You can override existing values or add new ones to extend the default sizes list.
+A map of token names to widths. Values provided here are **merged** over the defaults, so you can override an
+existing token or add a new one.
 
 ::: code-group
-```scss [override]
+
+```scss [Override]
 @use "@unsass/breakpoint" with (
     $screens: (
         "lg": 1024px
@@ -15,30 +21,30 @@ You can override existing values or add new ones to extend the default sizes lis
 );
 ```
 
-```scss [add new size]
+```scss [Add a token]
 @use "@unsass/breakpoint" with (
     $screens: (
         "3xl": 1920px
     )
 );
 ```
+
 :::
 
-**Default tokens**
+### Default tokens
 
-| Key   | Value    | Description                                          |
+| Key   | Value    | Typical target                                       |
 |-------|----------|------------------------------------------------------|
 | `xs`  | `320px`  | Extra small screen.                                  |
 | `sm`  | `480px`  | Standard mobile screen.                              |
-| `md`  | `768px`  | mobile on landscape mode or tablet on portrait mode. |
-| `lg`  | `960px`  | Desktop or tablet on landscape mode.                 |
+| `md`  | `768px`  | Mobile landscape or tablet portrait.                 |
+| `lg`  | `960px`  | Desktop or tablet landscape.                         |
 | `xl`  | `1200px` | Large desktop screen.                                |
 | `2xl` | `1400px` | Extra large desktop screen.                          |
 
-
 ## `$reset`
 
-Clears the default `$screens` configuration to provide a clean slate for defining your own custom tokens.
+Set to `true` to discard the default tokens entirely and start from a clean slate with your own `$screens`.
 
 ```scss
 @use "@unsass/breakpoint" with (
@@ -50,23 +56,28 @@ Clears the default `$screens` configuration to provide a clean slate for definin
 );
 ```
 
-## `config($screens, $reset)`
+## Runtime configuration with `config()`
 
-The following Sass will configure new parameters:
+When `@use ... with` is not available — for instance because another dependency already configured the module at
+the top level — adjust the tokens at runtime with the `config()` mixin instead.
 
 ```scss
 @use "@unsass/breakpoint";
 
+// Merge new tokens over the current ones.
 @include breakpoint.config((
-    "lg": 1024px
+    "3xl": 1920px
 ));
+
+// Or replace them entirely.
+@include breakpoint.config((
+    "tablet": 768px,
+    "desktop": 960px
+), $reset: true);
 ```
 
 ::: tip
-If variables are already configured on top-level using `@use ... with`, by another dependency, for example, you can't
-use this solution anymore. This is because the module can only be set up once, this is a Sass restriction with **Module
-System**, but another solution exists for override the main configuration, with a mixin!
-
-See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
-with mixins.
+A module can only be set up **once** with `@use ... with`, a constraint of the Sass module system. The `config()`
+mixin is the supported escape hatch. See the [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins)
+on overriding configuration with mixins.
 :::

@@ -1,30 +1,37 @@
+---
+description: "Get started with @unsass/css: Sass mixins for CSS declarations and selectors, with first-class custom-property support."
+---
+
 # CSS
 
-A set of Sass mixins to help manage CSS declarations consistently, with built-in support for defining and using custom
-properties.
+`@unsass/css` is a set of Sass mixins for emitting CSS declarations and selectors consistently — with built-in
+support for defining and consuming CSS custom properties.
 
-Check the repo here: [https://github.com/unsass/css](https://github.com/unsass/css).
+> Repository: [github.com/unsass/css](https://github.com/unsass/css)
 
 ## Install
 
-Add `@unsass/css` as dependencies for the project.
-
 ::: code-group
-```npm
+
+```sh [npm]
 npm install @unsass/css
 ```
 
-```yarn
+```sh [yarn]
 yarn add @unsass/css
 ```
+
+```sh [pnpm]
+pnpm add @unsass/css
+```
+
 :::
 
 ## Basic usage
 
-Use `@unsass/css` inside the project.
-
 ::: code-group
-```scss
+
+```scss [SCSS]
 @use "@unsass/css";
 
 .foo {
@@ -32,9 +39,16 @@ Use `@unsass/css` inside the project.
 }
 ```
 
-```css
+```css [CSS]
 .foo {
     color: darkcyan;
 }
 ```
+
 :::
+
+## Next steps
+
+- [Configuration](/css/configuration) — work with CSS custom properties.
+- [Mixins](/css/mixins) — the `declaration()` and `selector()` mixins in detail.
+- [Best Practices](/css/best-practices) — when to reach for each mixin.

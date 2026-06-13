@@ -1,29 +1,40 @@
+---
+description: "Get started with @unsass/rem: convert pixel values to rem units against a single configurable baseline."
+---
+
 # Rem
 
-Provides a consistent way to manage CSS rem across your project.
+`@unsass/rem` provides a consistent way to express CSS lengths in `rem`, converting from pixels against a single,
+configurable baseline.
 
-Check the repo here: [https://github.com/unsass/rem](https://github.com/unsass/rem).
+Unlike `em`, `rem` always resolves against the document root, so conversions need no per-call context — just one
+baseline for the whole project.
+
+> Repository: [github.com/unsass/rem](https://github.com/unsass/rem)
 
 ## Install
 
-Add `@unsass/rem` as dependencies for the project.
-
 ::: code-group
-```npm
+
+```sh [npm]
 npm install @unsass/rem
 ```
 
-```yarn
+```sh [yarn]
 yarn add @unsass/rem
 ```
+
+```sh [pnpm]
+pnpm add @unsass/rem
+```
+
 :::
 
 ## Basic usage
 
-Use `@unsass/rem` inside the project.
-
 ::: code-group
-```scss
+
+```scss [SCSS]
 @use "@unsass/rem";
 
 .foo {
@@ -31,9 +42,16 @@ Use `@unsass/rem` inside the project.
 }
 ```
 
-```css
+```css [CSS]
 .foo {
     font-size: 1rem;
 }
 ```
+
 :::
+
+## Next steps
+
+- [Configuration](/rem/configuration) — set the baseline.
+- [Functions](/rem/functions) and [Mixins](/rem/mixins) — the full API.
+- [Best Practices](/rem/best-practices) — what to convert and what to leave alone.

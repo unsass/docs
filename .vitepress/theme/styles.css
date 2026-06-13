@@ -1,6 +1,122 @@
+/* ============================================================================================= */
+/*                                        UNSASS — THEME                                          */
+/*  Sober, technical look: slate surfaces + darkcyan (teal) accent.                              */
+/* ============================================================================================= */
+
 :root {
+    /* Brand (teal / darkcyan) ---------------------------------------------------------------- */
+    --vp-c-brand-1: #0d8f8f;
+    --vp-c-brand-2: #0aa1a1;
+    --vp-c-brand-3: #008b8b;
+    --vp-c-brand-soft: rgba(0, 139, 139, 0.14);
+
+    /* Display font for headings and hero (loaded via Google Fonts in config head). */
+    --us-font-display: 'Montserrat', var(--vp-font-family-base);
+
+    /* Slate-tinted neutral surfaces ---------------------------------------------------------- */
+    --vp-c-bg: #ffffff;
+    --vp-c-bg-alt: #f4f6f7;
+    --vp-c-bg-soft: #f0f3f4;
+
+    /* Hero ----------------------------------------------------------------------------------- */
     --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: #c69;
-    --vp-c-brand-1: #c69;
-    --vp-button-brand-bg: #c69;
+    --vp-home-hero-name-background: linear-gradient(120deg, #008b8b 30%, #1f8fa3);
+    --vp-home-hero-image-background-image: linear-gradient(120deg, rgba(0, 139, 139, 0.20), rgba(31, 143, 163, 0.12));
+    --vp-home-hero-image-filter: blur(48px);
+
+    /* Buttons -------------------------------------------------------------------------------- */
+    --vp-button-brand-bg: #008b8b;
+    --vp-button-brand-hover-bg: #0aa1a1;
+    --vp-button-brand-active-bg: #0d8f8f;
+    --vp-button-brand-border: transparent;
+}
+
+.dark {
+    /* Slate dark surfaces -------------------------------------------------------------------- */
+    --vp-c-bg: #0f172a;
+    --vp-c-bg-alt: #131c30;
+    --vp-c-bg-soft: #1a2436;
+    --vp-c-bg-elv: #1a2436;
+    --vp-c-divider: #25324a;
+
+    --vp-c-brand-1: #2dd4cf;
+    --vp-c-brand-2: #22b8b3;
+    --vp-c-brand-3: #14a8a3;
+    --vp-c-brand-soft: rgba(45, 212, 207, 0.16);
+
+    --vp-home-hero-name-background: linear-gradient(120deg, #2dd4cf 30%, #5eb1c7);
+    --vp-home-hero-image-background-image: linear-gradient(120deg, rgba(45, 212, 207, 0.22), rgba(94, 177, 199, 0.12));
+}
+
+/* Brand-tinted inline code -------------------------------------------------------------------- */
+:not(pre) > code {
+    color: var(--vp-c-brand-1);
+}
+
+/* Headings & hero: display font + tightened tracking for a crisper, technical feel ------------ */
+.VPHero .name,
+.VPHero .text,
+.vp-doc h1,
+.vp-doc h2 {
+    font-family: var(--us-font-display);
+    letter-spacing: -0.01em;
+}
+
+/* Hero: faint blueprint grid (nods to the "design system" nature) ----------------------------- */
+.VPHome {
+    position: relative;
+}
+
+.VPHome::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        linear-gradient(var(--vp-c-divider) 1px, transparent 1px),
+        linear-gradient(90deg, var(--vp-c-divider) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(circle at 50% 18%, black, transparent 60%);
+    mask-image: radial-gradient(circle at 50% 18%, black, transparent 60%);
+    opacity: 0.4;
+}
+
+/* Buttons: lighten on hover, no movement ------------------------------------------------------ */
+.VPButton.brand {
+    transition: background-color 0.18s ease;
+}
+
+/* Feature cards: teal-tinted icon, restrained hover (border only, no movement) ---------------- */
+.VPFeature {
+    border: 1px solid var(--vp-c-divider);
+    transition: border-color 0.2s ease;
+}
+
+.VPFeature:hover {
+    border-color: var(--vp-c-brand-1);
+}
+
+.VPFeature .icon {
+    color: var(--vp-c-brand-1);
+    background: var(--vp-c-brand-soft) !important;
+}
+
+.VPFeature .icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Force a 3-per-row feature grid. With 5 features VitePress tags items `.grid-4` (25% / 4-up at  */
+/* >=960px); these higher-specificity rules override that scoped style to 3-up.                  */
+@media (min-width: 768px) {
+    .VPFeatures .items .item.grid-4 {
+        width: calc(100% / 2);
+    }
+}
+
+@media (min-width: 960px) {
+    .VPFeatures .items .item.grid-4 {
+        width: calc(100% / 3);
+    }
 }

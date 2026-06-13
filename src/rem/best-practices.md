@@ -1,128 +1,60 @@
+---
+description: "Best practices for @unsass/rem: keep a 16px baseline, convert larger values and leave hairlines in pixels."
+---
+
 # Best Practices
 
-Guidelines and recommendations for using the Rem package effectively.
+Recommendations for using `@unsass/rem` effectively.
 
-## Consistent Base Size
+## Stick to a 16px baseline
 
-Use the same base size throughout your project:
-
-```scss
-@use "@unsass/rem" with (
-  $baseline: 16px  // Browser default
-);
-```
-
-### Why 16px?
-
-- It's the default browser font size
-- Respects user's browser preferences
-- Widely used standard across the web
-
-```scss
-// ❌ Avoid non-standard base sizes
-@use "@unsass/rem" with (
-  $baseline: 10px  // Makes math easier but breaks user preferences
-);
-
-// ✅ Good - Standard base size
-@use "@unsass/rem" with (
-  $baseline: 16px
-);
-```
-
-## Keep Small Values in Pixels
-
-Don't convert very small values like borders:
+`16px` is the browser default and respects the user's font-size preference. Resetting the baseline to `10px` makes
+the maths tidier but quietly overrides accessibility settings — avoid it unless you have a specific reason.
 
 ```scss
 // ✅ Good
-.component {
-  border: 1px solid black;           // Keep in pixels
-  border-radius: rem.convert(8px);   // Convert larger values
-  padding: rem.convert(16px);        // Convert spacing
-}
+@use "@unsass/rem" with ($baseline: 16px);
+```
 
+```scss
 // ❌ Avoid
-.component {
-  border: rem.convert(1px) solid black;  // 0.0625rem is awkward
-}
+@use "@unsass/rem" with ($baseline: 10px);
 ```
 
-Keep these in pixels:
-- Borders (1px, 2px)
-- Box shadows (small offsets)
-- Very fine details (<4px)
+## Pair the baseline with `baseline()`
 
-## Avoid Nested Calculations
-
-Keep rem calculations simple:
+Apply the `baseline()` mixin at the root so the document `font-size` matches the configured reference:
 
 ```scss
-// ❌ Avoid - Complex calculation
-.component {
-  padding: calc(#{rem.convert(16px)} + #{rem.convert(8px)});
-}
-
-// ✅ Good - Calculate first, then convert
-.component {
-  padding: rem.convert(24px);
-}
-
-// ✅ Also good - Use CSS calc with rem
-.component {
-  padding: calc(1rem + 0.5rem);  // 1.5rem
+html {
+    @include rem.baseline; // font-size: 100%;
 }
 ```
 
-## Performance Considerations
+## Keep tiny, fixed details in pixels
 
-Convert once, reuse many times:
-
-```scss
-// ❌ Avoid - Converts every time
-.button {
-  padding: rem.convert(12px) rem.convert(24px);
-  margin: rem.convert(12px);
-}
-
-.input {
-  padding: rem.convert(12px) rem.convert(24px);
-}
-
-// ✅ Good - Convert once
-$input-padding-y: rem.convert(12px);
-$input-padding-x: rem.convert(24px);
-
-.button {
-  padding: $input-padding-y $input-padding-x;
-  margin: $input-padding-y;
-}
-
-.input {
-  padding: $input-padding-y $input-padding-x;
-}
-```
-
-## Don't Convert Everything
-
-Some values should stay in their original units:
+Hairline borders and very small offsets read awkwardly as `rem` and gain nothing from scaling:
 
 ```scss
 .component {
-  // ✅ Keep these as-is
-  opacity: 0.5;
-  z-index: 10;
-  flex: 1;
-  order: 2;
-
-  // ✅ Keep percentages
-  width: 50%;
-
-  // ✅ Keep viewport units
-  height: 100vh;
-
-  // ✅ Convert pixel values
-  padding: rem.convert(16px);
-  font-size: rem.convert(18px);
+    border: 1px solid black;           // keep in px
+    border-radius: rem.convert(8px);   // convert larger values
+    padding: rem.convert(16px);
 }
 ```
+
+## Convert once, reuse
+
+Store repeated conversions in a variable instead of recomputing them at every call site:
+
+```scss
+$gap: rem.convert(24px);
+
+.stack { gap: $gap; }
+.grid  { gap: $gap; }
+```
+
+## Don't convert unitless or non-length values
+
+Leave `opacity`, `z-index`, `flex`, percentages and viewport units in their own units — only pixel lengths benefit
+from `rem` conversion.

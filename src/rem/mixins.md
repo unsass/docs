@@ -1,151 +1,76 @@
-# Application API
+---
+description: "Reference for @unsass/rem mixins: declaration(), baseline() and config() for rem-based sizing."
+---
 
-## declaration()
+# Mixins
 
-Sets declaration with conversion of `px` unit to `rem`, with optional `!important`
+Accessed through the `rem` namespace (`@use "@unsass/rem"`). Conversions use the configured
+[`$baseline`](/rem/configuration).
 
-- **Arguments**
+## `declaration($property, $value, $important)` <Badge type="tip" text="mixin" />
 
-    | Argument     | Default | Type    | Description                       |
-    |--------------|---------|---------|-----------------------------------|
-    | `$property`  | null    | String  | Mandatory. The CSS property name. |
-    | `$value`     | null    | String  | Mandatory. The property value.    |
-    | `$important` | false   | Boolean | Enable the `!important` option.   |
+Emits a declaration whose value is converted to `rem`. A thin wrapper over [`convert()`](/rem/functions) plus
+[`css.declaration()`](/css/mixins).
 
-- **Details**
+| Parameter    | Type      | Default | Description                    |
+|--------------|-----------|---------|--------------------------------|
+| `$property`  | `string`  | —       | The CSS property.              |
+| `$value`     | `any`     | —       | The pixel value(s) to convert. |
+| `$important` | `boolean` | `false` | Append `!important`.           |
 
-    ```scss
-    @include rem.declaration($property: String, $value: String, $important: Boolean);
-    ```
-  
-- **Examples**
+::: code-group
 
-    Single value
+```scss [SCSS]
+@use "@unsass/rem";
 
-    ::: code-group
-    ```scss
-    @use "@unsass/rem";
-    
-    .foo {
-        @include rem.declaration(font-size, 16px);
-    }
-    ```
+.foo {
+    @include rem.declaration(margin, 20px 30px);
+    @include rem.declaration(border, 1px solid darkcyan);
+}
+```
 
-    ```css
-    .foo {
-        font-size: 1rem;
-    }
-    ```
-    :::
+```css [CSS]
+.foo {
+    margin: 1.25rem 1.875rem;
+    border: 0.0625rem solid darkcyan;
+}
+```
 
-    Multiple values
+:::
 
-    ::: code-group
-    ```scss
-    @use "@unsass/rem";
-    
-    .foo {
-        @include rem.declaration(margin, 20px 30px);
-    }
-    ```
-    
-    ```css
-    .foo {
-        margin: 1.25rem 1.875rem;
-    }
-    ```
-    :::
+## `baseline($important)` <Badge type="tip" text="mixin" />
 
-    Multiple mixed values
+Emits a root `font-size` that maps `1rem` to the configured baseline. With the default `16px` baseline this is
+`100%`, which respects the user's browser font-size preference.
 
-    ::: code-group
-    ```scss
-    @use "@unsass/rem";
-    
-    .foo {
-        @include rem.declaration(border, 1px solid darkcyan);
-    }
-    ```
-    
-    ```css
-    .foo {
-        border: 0.0625rem solid darkcyan;
-    }
-    ```
-    :::
+| Parameter    | Type      | Default | Description          |
+|--------------|-----------|---------|----------------------|
+| `$important` | `boolean` | `false` | Append `!important`. |
 
-    Comma-separated values
+::: code-group
 
-    ::: code-group
-    ```scss
-    @use "@unsass/rem";
-    
-    .foo {
-        @include rem.declaration(box-shadow, 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
-    }
-    ```
-    
-    ```css
-    .foo {
-        box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
-    }
-    ```
-    :::
+```scss [SCSS]
+@use "@unsass/rem";
 
-## baseline()
+html,
+body {
+    @include rem.baseline;
+}
+```
 
-Sets declaration with `font-size` property, with optional `!important`.
+```css [CSS]
+html,
+body {
+    font-size: 100%;
+}
+```
 
-- **Arguments**
+:::
 
-    | Argument     | Default | Type    | Description                       |
-    |--------------|---------|---------|-----------------------------------|
-    | `$important` | false   | Boolean | Enable the `!important` option.   |
+## `config($baseline)` <Badge type="tip" text="mixin" />
 
-- **Details**
+Sets the baseline at runtime. See [Configuration](/rem/configuration#runtime-configuration-with-config).
 
-    ```scss
-    @include rem.baseline($important: Boolean);
-    ```
-
-- **Example**
-
-    General
-
-    ::: code-group
-    ```scss
-    @use "@unsass/rem";
-    
-    html,
-    body {
-        @include rem.baseline($important: false);
-    }
-    ```
-    
-    ```css
-    html,
-    body {
-        font-size: 100%;
-    }
-    ```
-    :::
-
-    With `!important`
-
-    ::: code-group
-    ```scss
-    @use "@unsass/rem";
-    
-    html,
-    body {
-        @include rem.baseline($important: true);
-    }
-    ```
-    
-    ```css
-    html,
-    body {
-        font-size: 100% !important;
-    }
-    ```
-    :::
+| Parameter   | Type     | Default | Description              |
+|-------------|----------|---------|--------------------------|
+| `$baseline` | `number` | `null`  | The new baseline in `px`.|
