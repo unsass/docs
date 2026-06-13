@@ -30,12 +30,12 @@ features:
     details: Convert pixel values to context-relative em units, with the context explicit at every call.
     link: /em/getting-started
     linkText: Read the docs
-  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="8" y="5" width="8" height="8" rx="1"/><path d="M12 13v7"/></svg>'
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="6" y="6" width="12" height="12" rx="1.5" opacity="0.3"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>'
     title: Rem
     details: Convert pixel values to rem units against a single, configurable document baseline.
     link: /rem/getting-started
     linkText: Read the docs
-  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l6 16 2.2-6.2L19.5 11.5z"/></svg>'
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><text x="12" y="16.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="600" fill="currentColor" stroke="none">.btn</text></svg>'
     title: Selector
     details: Build prefixed, suffixed and pseudo selectors from a single, expressive mixin.
     link: /selector/getting-started
