@@ -15,7 +15,7 @@ hero:
       link: https://github.com/unsass
 
 features:
-  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M12 5v12"/><path d="M7 9l-2 2 2 2M17 9l2 2-2 2"/></svg>'
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" opacity="0.4"/><rect x="6" y="7.5" width="12" height="9" rx="1.5" opacity="0.7"/><rect x="9.5" y="10.5" width="5" height="3" rx="1"/></svg>'
     title: Breakpoint
     details: Centralize named breakpoints and apply them with composable min, max, only and between mixins.
     link: /breakpoint/getting-started
