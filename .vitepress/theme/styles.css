@@ -20,3 +20,13 @@
     --ff-color-accent-soft: rgba(45, 212, 207, 0.13);
     --ff-color-accent-glow: rgba(45, 212, 207, 0.2);
 }
+
+/* Feature cards: the icon reads too small next to the numbered index — match its 2rem size. */
+.ff-feature-icon {
+    font-size: 2rem;
+}
+
+.ff-feature-icon svg {
+    width: 2rem;
+    height: 2rem;
+}
