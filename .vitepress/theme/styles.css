@@ -21,12 +21,13 @@
     --ff-color-accent-glow: rgba(45, 212, 207, 0.2);
 }
 
-/* Feature cards: the icon reads too small next to the numbered index — match its 2rem size. */
-.ff-feature-icon {
+/* Feature cards: the icon reads too small next to the numbered index — match its 2rem size.     */
+/* `.ff-theme` prefix matches the theme's own selector specificity, which a bare class loses to.  */
+.ff-theme .ff-feature-icon {
     font-size: 2rem;
 }
 
-.ff-feature-icon svg {
+.ff-theme .ff-feature-icon svg {
     width: 2rem;
     height: 2rem;
 }
