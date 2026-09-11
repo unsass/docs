@@ -217,7 +217,7 @@ export default defineConfig({
         ],
         footer: {
             message: 'Released under the MIT License.',
-            copyright: `Copyright © 2022–${new Date().getFullYear()} UnSass`
+            copyright: `Copyright © 2022–${new Date().getFullYear()} Front Factory.`
         }
     }
 });

@@ -3,7 +3,7 @@ layout: home
 description: "UnSass is a suite of small, dependency-free Sass utilities — breakpoint, css, em, rem and selector. Install only what you need."
 
 hero:
-  name: "UnSass"
+  name: "by Front Factory"
   text: "Standalone Sass utilities, à la carte."
   tagline: "Modular. Validated. Dependency-free."
   command:
