@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import baseConfig from '@frontfactory/vitepress-theme/config';
 
 const description = 'A suite of small, dependency-free Sass utilities. Install only what you need.';
 const hostname = 'https://unsass.dev';
@@ -59,6 +60,7 @@ const packageSidebar = ({ slug, configLabel, hasFunctions }: PackageSidebarOptio
 ];
 
 export default defineConfig({
+    extends: baseConfig,
     title: 'UnSass',
     description,
     lang: 'en-US',
@@ -128,6 +130,31 @@ export default defineConfig({
         },
         siteTitle: false,
         outline: [2, 3],
+        ff: {
+            navOrder: 'menu-first',
+            footerColumns: [
+                {
+                    title: 'Guide',
+                    items: [
+                        { text: 'What is UnSass?', link: '/guide/what-is-unsass' },
+                        { text: 'Installation', link: '/guide/installation' },
+                        { text: 'Best Practices', link: '/guide/best-practices' },
+                        { text: 'Patterns', link: '/guide/patterns' }
+                    ]
+                },
+                {
+                    title: 'Packages',
+                    items: [
+                        { text: 'Breakpoint', link: '/breakpoint/getting-started' },
+                        { text: 'CSS', link: '/css/getting-started' },
+                        { text: 'Em', link: '/em/getting-started' },
+                        { text: 'Rem', link: '/rem/getting-started' },
+                        { text: 'Selector', link: '/selector/getting-started' }
+                    ]
+                }
+            ],
+            footerSocial: true
+        },
         search: {
             provider: 'local'
         },
@@ -190,7 +217,7 @@ export default defineConfig({
         ],
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © UnSass'
+            copyright: `Copyright © 2022–${new Date().getFullYear()} UnSass`
         }
     }
 });

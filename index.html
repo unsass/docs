@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Magnesium.dev - Largeur 80%</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #08090d;
+            }
+        }
+
+        html.dark {
+            --bg-color: #08090d;
+        }
+
+        html.light {
+            --bg-color: #f8fafc;
+        }
+
+        body {
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="c" width="650" height="650"></canvas>
+
+<script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    const CX = canvas.width / 2;
+    const CY = canvas.height * 0.68;
+
+    // --- Calcul des dimensions pour occuper 80% de la largeur du Canvas ---
+    // En projection isométrique (rotation -45°), la largeur visuelle équivaut à BASE_SIZE * sqrt(2) * scaleX(1)
+    // Pour 80% de la largeur du canvas :
+    const TARGET_WIDTH = canvas.width * 0.8;
+    const BASE_SIZE = TARGET_WIDTH / Math.SQRT2; // ~367px pour un canvas de 650px
+    const BASE_OFFSET = BASE_SIZE / 2;
+    const BASE_RADIUS = BASE_SIZE * 0.1;
+    const BASE_HEIGHT_3D = 24;
+
+    const LAYER_W = BASE_SIZE * 0.78;
+    const LAYER_H = BASE_SIZE * 0.78;
+    const LAYER_RADIUS = LAYER_W * 0.09;
+    const DROP_HEIGHT = -360;
+
+    const STACK_LAYERS = [
+        {
+            label: 'CSS',
+            colorHex: '#0fa8a8',
+            delay: 0,
+            dropDuration: 2000,
+            fuseStartProgress: 0.3
+        },
+        {
+            label: 'EM',
+            colorHex: '#0e9b9b',
+            delay: 1600,
+            dropDuration: 2000,
+            fuseStartProgress: 0.3
+        },
+        {
+            label: 'REM',
+            colorHex: '#0d8f8f',
+            delay: 3200,
+            dropDuration: 2000,
+            fuseStartProgress: 0.3
+        },
+        {
+            label: 'BREAKPOINT',
+            colorHex: '#0b7373',
+            delay: 4800,
+            dropDuration: 2000,
+            fuseStartProgress: 0.3
+        },
+        {
+            label: 'SELECTOR',
+            colorHex: '#095959',
+            delay: 6400,
+            dropDuration: 2000,
+            fuseStartProgress: 0.3
+        }
+    ];
+
+    const PAUSE_END = 1000;
+    const TOTAL_CYCLE = 6400 + 2000 + PAUSE_END;
+
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    function getThemeColors() {
+        const hasDarkClass = document.documentElement.classList.contains('dark');
+        const hasLightClass = document.documentElement.classList.contains('light');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        const isDark = hasDarkClass || (!hasLightClass && prefersDark);
+
+        return {
+            isDark,
+            baseSideTop: isDark ? '#112226' : '#cbd5e1',
+            baseSideBottom: isDark ? '#081417' : '#94a3b8',
+            baseTop: isDark ? '#0a191c' : '#f1f5f9',
+            gridLine: isDark ? 'rgba(13, 143, 143, 0.22)' : 'rgba(13, 143, 143, 0.25)',
+            cardBg: isDark ? 'rgba(10, 25, 28, 0.94)' : 'rgba(255, 255, 255, 0.95)',
+            textPrimary: isDark ? '#ffffff' : '#0f172a',
+            baseOutline: '#0d8f8f'
+        };
+    }
+
+    // Dessin du socle 3D (Fixe)
+    function draw3DPedestal(colors) {
+        const baseShape = new Path2D();
+        baseShape.roundRect(-BASE_OFFSET, -BASE_OFFSET, BASE_SIZE, BASE_SIZE, BASE_RADIUS);
+
+        // 1. Flancs 3D
+        for (let h = BASE_HEIGHT_3D; h > 0; h--) {
+            ctx.save();
+            ctx.translate(CX, CY + h);
+            ctx.scale(1, 0.5);
+            ctx.rotate(-Math.PI / 4);
+
+            ctx.fillStyle = h > BASE_HEIGHT_3D / 2 ? colors.baseSideTop : colors.baseSideBottom;
+            ctx.fill(baseShape);
+            ctx.restore();
+        }
+
+        // 2. Base inférieure
+        ctx.save();
+        ctx.translate(CX, CY + BASE_HEIGHT_3D);
+        ctx.scale(1, 0.5);
+        ctx.rotate(-Math.PI / 4);
+        ctx.beginPath();
+        ctx.roundRect(-BASE_OFFSET, -BASE_OFFSET, BASE_SIZE, BASE_SIZE, BASE_RADIUS);
+        ctx.strokeStyle = colors.baseOutline;
+        ctx.shadowColor = colors.baseOutline;
+        ctx.shadowBlur = colors.isDark ? 10 : 5;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+        ctx.restore();
+
+        // 3. Plateau supérieur
+        ctx.save();
+        ctx.translate(CX, CY);
+        ctx.scale(1, 0.5);
+        ctx.rotate(-Math.PI / 4);
+
+        ctx.fillStyle = colors.baseTop;
+        ctx.fill(baseShape);
+
+        // Grille gravée
+        ctx.save();
+        ctx.clip(baseShape);
+
+        ctx.beginPath();
+        ctx.strokeStyle = colors.gridLine;
+        ctx.lineWidth = 1;
+        const step = BASE_SIZE / 6;
+
+        for (let x = -BASE_OFFSET + step; x < BASE_OFFSET; x += step) {
+            ctx.moveTo(x, -BASE_OFFSET);
+            ctx.lineTo(x, BASE_OFFSET);
+        }
+        for (let y = -BASE_OFFSET + step; y < BASE_OFFSET; y += step) {
+            ctx.moveTo(-BASE_OFFSET, y);
+            ctx.lineTo(BASE_OFFSET, y);
+        }
+        ctx.stroke();
+        ctx.restore();
+
+        // Contour supérieur fixe
+        ctx.strokeStyle = colors.baseOutline;
+        ctx.shadowColor = colors.baseOutline;
+        ctx.shadowBlur = colors.isDark ? 12 : 6;
+        ctx.lineWidth = 2;
+        ctx.stroke(baseShape);
+
+        ctx.restore();
+    }
+
+    // Dessin de la plaque
+    function drawCard(offsetY, alpha, layerData, colors) {
+        ctx.save();
+        ctx.translate(CX, CY + offsetY);
+        ctx.scale(1, 0.5);
+        ctx.rotate(-Math.PI / 4);
+
+        ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+
+        const halfW = LAYER_W / 2;
+        const halfH = LAYER_H / 2;
+
+        // Corps de la plaque
+        ctx.beginPath();
+        ctx.roundRect(-halfW, -halfH, LAYER_W, LAYER_H, LAYER_RADIUS);
+        ctx.fillStyle = colors.cardBg;
+        ctx.fill();
+
+        // Contour Néon
+        ctx.strokeStyle = layerData.colorHex;
+        ctx.shadowColor = layerData.colorHex;
+        ctx.shadowBlur = colors.isDark ? 16 : 8;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        // Texte principal (adapté à la taille accrue)
+        ctx.save();
+        ctx.shadowBlur = 0;
+
+        ctx.fillStyle = colors.textPrimary;
+        ctx.font = '800 24px system-ui, -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(layerData.label, 0, 0);
+
+        ctx.restore();
+        ctx.restore();
+    }
+
+    function animate(time) {
+        const colors = getThemeColors();
+        const cycleTime = time % TOTAL_CYCLE;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Socle 3D fixe
+        draw3DPedestal(colors);
+
+        // Animation des plaques
+        STACK_LAYERS.forEach((layer) => {
+            const elapsed = cycleTime - layer.delay;
+
+            if (elapsed > 0 && elapsed < layer.dropDuration) {
+                const progress = elapsed / layer.dropDuration;
+                const dropEase = easeOutCubic(progress);
+
+                // Position verticale
+                const offsetY = DROP_HEIGHT * (1 - dropEase);
+
+                // Calcul de l'opacité
+                let alpha = 1;
+
+                if (progress < layer.fuseStartProgress) {
+                    alpha = Math.min(1, progress / 0.15);
+                } else {
+                    const fuseProgress = (progress - layer.fuseStartProgress) / (1 - layer.fuseStartProgress);
+                    alpha = 1 - fuseProgress;
+                }
+
+                drawCard(offsetY, alpha, layer, colors);
+            }
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+</script>
+</body>
+</html>

@@ -6,12 +6,23 @@ hero:
   name: "UnSass"
   text: "Standalone Sass utilities, à la carte."
   tagline: "Modular. Validated. Dependency-free."
+  command:
+    - label: Breakpoint
+      value: npm install @unsass/breakpoint
+    - label: CSS
+      value: npm install @unsass/css
+    - label: Em
+      value: npm install @unsass/em
+    - label: Rem
+      value: npm install @unsass/rem
+    - label: Selector
+      value: npm install @unsass/selector
   actions:
     - theme: brand
       text: Get Started
       link: /guide/what-is-unsass
     - theme: alt
-      text: Github
+      text: GitHub
       link: https://github.com/unsass
 
 features:

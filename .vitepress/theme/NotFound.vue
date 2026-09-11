@@ -24,7 +24,7 @@ import { withBase } from 'vitepress';
 }
 
 .code {
-    font-family: var(--us-font-display);
+    font-family: var(--ff-font-display);
     font-size: 64px;
     font-weight: 700;
     line-height: 1;
@@ -34,7 +34,7 @@ import { withBase } from 'vitepress';
 
 .title {
     margin: 12px 0 0;
-    font-family: var(--us-font-display);
+    font-family: var(--ff-font-display);
     font-size: 24px;
     font-weight: 600;
     border: none;
