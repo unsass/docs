@@ -13,7 +13,7 @@ existing token or add a new one.
 
 ::: code-group
 
-```scss [Override]
+```scss [Override a token]
 @use "@unsass/breakpoint" with (
     $screens: (
         "lg": 1024px
@@ -33,14 +33,14 @@ existing token or add a new one.
 
 ### Default tokens
 
-| Key   | Value    | Typical target                                       |
-|-------|----------|------------------------------------------------------|
-| `xs`  | `320px`  | Extra small screen.                                  |
-| `sm`  | `480px`  | Standard mobile screen.                              |
-| `md`  | `768px`  | Mobile landscape or tablet portrait.                 |
-| `lg`  | `960px`  | Desktop or tablet landscape.                         |
-| `xl`  | `1200px` | Large desktop screen.                                |
-| `2xl` | `1400px` | Extra large desktop screen.                          |
+| Key   | Value    | Typical target                            |
+|-------|----------|-------------------------------------------|
+| `xs`  | `320px`  | Small phones.                             |
+| `sm`  | `480px`  | Phones.                                   |
+| `md`  | `768px`  | Phones in landscape, tablets in portrait. |
+| `lg`  | `960px`  | Tablets in landscape, small laptops.      |
+| `xl`  | `1200px` | Desktops.                                 |
+| `2xl` | `1400px` | Large desktops.                           |
 
 Tokens are **sorted by ascending width** automatically, whatever the order you declare them in, so
 `only()`, `get-next()` and `get-prev()` always follow the real width order.
@@ -57,8 +57,9 @@ Set to `true` to discard the default tokens entirely and start from a clean slat
 @use "@unsass/breakpoint" with (
     $reset: true,
     $screens: (
-        "tablet": 768px,
-        "desktop": 960px
+        "sm": 640px,
+        "md": 768px,
+        "lg": 1024px
     )
 );
 ```
@@ -78,8 +79,9 @@ the top level — adjust the tokens at runtime with the `config()` mixin instead
 
 // Or replace them entirely.
 @include breakpoint.config((
-    "tablet": 768px,
-    "desktop": 960px
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px
 ), $reset: true);
 ```
 

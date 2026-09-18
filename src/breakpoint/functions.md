@@ -12,9 +12,9 @@ are always ordered by ascending width.
 
 Returns the configured width for a token, or `null` when the token is unknown.
 
-| Parameter | Type     | Default | Description                        |
-|-----------|----------|---------|------------------------------------|
-| `$token`  | `string` | —       | A key from the configured tokens.  |
+| Parameter | Type     | Default | Description                       |
+|-----------|----------|---------|-----------------------------------|
+| `$token`  | `string` | —       | A key from the configured tokens. |
 
 ```scss
 breakpoint.get-value("lg"); // 960px
@@ -24,9 +24,9 @@ breakpoint.get-value("lg"); // 960px
 
 Returns the key of the token that follows the given one, or `null` for the last or an unknown token.
 
-| Parameter | Type     | Default | Description       |
-|-----------|----------|---------|-------------------|
-| `$value`  | `string` | —       | A token key.      |
+| Parameter | Type     | Default | Description  |
+|-----------|----------|---------|--------------|
+| `$value`  | `string` | —       | A token key. |
 
 ```scss
 breakpoint.get-next("lg"); // "xl"
@@ -36,9 +36,9 @@ breakpoint.get-next("lg"); // "xl"
 
 Returns the key of the token that precedes the given one, or `null` for the first or an unknown token.
 
-| Parameter | Type     | Default | Description       |
-|-----------|----------|---------|-------------------|
-| `$value`  | `string` | —       | A token key.      |
+| Parameter | Type     | Default | Description  |
+|-----------|----------|---------|--------------|
+| `$value`  | `string` | —       | A token key. |
 
 ```scss
 breakpoint.get-prev("lg"); // "md"
@@ -48,9 +48,9 @@ breakpoint.get-prev("lg"); // "md"
 
 Returns the full token map (sorted by ascending width), optionally omitting one or more keys.
 
-| Parameter    | Type      | Default | Description              |
-|--------------|-----------|---------|--------------------------|
-| `$exclude…`  | `arglist` | —       | Token keys to leave out. |
+| Parameter   | Type      | Default | Description              |
+|-------------|-----------|---------|--------------------------|
+| `$exclude…` | `arglist` | —       | Token keys to leave out. |
 
 ```scss
 breakpoint.get-screens();             // the full map

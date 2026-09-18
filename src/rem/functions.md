@@ -17,9 +17,9 @@ A value with a unit other than `px` (`%`, `em`, `vw`…) raises a compile-time e
 conversion.
 :::
 
-| Parameter   | Type      | Default | Description                |
-|-------------|-----------|---------|----------------------------|
-| `$values…`  | `arglist` | —       | The value(s) to convert.   |
+| Parameter  | Type      | Default | Description              |
+|------------|-----------|---------|--------------------------|
+| `$values…` | `arglist` | —       | The value(s) to convert. |
 
 ::: code-group
 

@@ -12,9 +12,9 @@ Converts pixel values to `em`. Pass any number of values followed by the **conte
 pixel value that `1em` represents. Unitless numbers are treated as pixels; keywords, colors and `0` pass through
 untouched.
 
-| Parameter   | Type      | Default | Description                                                       |
-|-------------|-----------|---------|-------------------------------------------------------------------|
-| `$values…`  | `arglist` | —       | Values to convert; the **last** item is the context (in `px`).    |
+| Parameter  | Type      | Default | Description                                                    |
+|------------|-----------|---------|----------------------------------------------------------------|
+| `$values…` | `arglist` | —       | Values to convert; the **last** item is the context (in `px`). |
 
 ::: warning
 The context is mandatory and must be a number in `px` (or unitless). Omitting it, or passing a non-number, raises a

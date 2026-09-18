@@ -11,12 +11,12 @@ Accessed through the `em` namespace (`@use "@unsass/em"`).
 Emits a declaration whose value is converted to `em`. A thin wrapper over [`convert()`](/em/functions) plus
 [`css.declaration()`](/css/mixins).
 
-| Parameter    | Type      | Default | Description                              |
-|--------------|-----------|---------|------------------------------------------|
-| `$property`  | `string`  | —       | The CSS property.                        |
-| `$value`     | `any`     | —       | The pixel value(s) to convert.           |
-| `$context`   | `number`  | —       | The `em` context, in `px`.               |
-| `$important` | `boolean` | `false` | Append `!important`.                     |
+| Parameter    | Type      | Default | Description                    |
+|--------------|-----------|---------|--------------------------------|
+| `$property`  | `string`  | —       | The CSS property.              |
+| `$value`     | `any`     | —       | The pixel value(s) to convert. |
+| `$context`   | `number`  | —       | The `em` context, in `px`.     |
+| `$important` | `boolean` | `false` | Append `!important`.           |
 
 ::: code-group
 

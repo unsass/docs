@@ -12,10 +12,10 @@ hand.
 
 Appends a pseudo-class to a selector string.
 
-| Parameter        | Type     | Default | Description            |
-|------------------|----------|---------|------------------------|
-| `$selector`      | `string` | —       | The base selector.     |
-| `$pseudo-class`  | `string` | —       | The pseudo-class name. |
+| Parameter       | Type     | Default | Description            |
+|-----------------|----------|---------|------------------------|
+| `$selector`     | `string` | —       | The base selector.     |
+| `$pseudo-class` | `string` | —       | The pseudo-class name. |
 
 ```scss
 selector.pseudo-class(".foo", "hover"); // ".foo:hover"
@@ -25,10 +25,10 @@ selector.pseudo-class(".foo", "hover"); // ".foo:hover"
 
 Appends a pseudo-element to a selector string.
 
-| Parameter          | Type     | Default | Description              |
-|--------------------|----------|---------|--------------------------|
-| `$selector`        | `string` | —       | The base selector.       |
-| `$pseudo-element`  | `string` | —       | The pseudo-element name. |
+| Parameter         | Type     | Default | Description              |
+|-------------------|----------|---------|--------------------------|
+| `$selector`       | `string` | —       | The base selector.       |
+| `$pseudo-element` | `string` | —       | The pseudo-element name. |
 
 ```scss
 selector.pseudo-element(".foo", "before"); // ".foo::before"

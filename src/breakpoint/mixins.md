@@ -13,11 +13,11 @@ ones.
 
 ## `up($token)` <Badge type="tip" text="mixin" />
 
-Applies a `min-width` media query — styles take effect at the token width and above.
+Emits a `min-width` media query: the styles apply from the token's viewport width and up.
 
-| Parameter | Type     | Default | Description                        |
-|-----------|----------|---------|------------------------------------|
-| `$token`  | `string` | —       | A key from the configured tokens.  |
+| Parameter | Type     | Default | Description                       |
+|-----------|----------|---------|-----------------------------------|
+| `$token`  | `string` | —       | A key from the configured tokens. |
 
 ::: code-group
 
@@ -43,12 +43,12 @@ Applies a `min-width` media query — styles take effect at the token width and 
 
 ## `down($token)` <Badge type="tip" text="mixin" />
 
-Applies a `max-width` media query — styles take effect below the token width. The maximum is the token value minus
-`0.02px` to avoid overlap with `up()` on sub-pixel viewports.
+Emits a `max-width` media query: the styles apply below the token's viewport width. The maximum is the token value
+minus `0.02px`, so it never overlaps `up()` on fractional viewport widths.
 
-| Parameter | Type     | Default | Description                        |
-|-----------|----------|---------|------------------------------------|
-| `$token`  | `string` | —       | A key from the configured tokens.  |
+| Parameter | Type     | Default | Description                       |
+|-----------|----------|---------|-----------------------------------|
+| `$token`  | `string` | —       | A key from the configured tokens. |
 
 ::: code-group
 
@@ -74,12 +74,12 @@ Applies a `max-width` media query — styles take effect below the token width. 
 
 ## `only($token)` <Badge type="tip" text="mixin" />
 
-Targets a single breakpoint range: from the token width up to just before the **next** token. For the last token it
-falls back to `up()`.
+Targets a single breakpoint range: from the token's width up to just before the **next** token. The last token has no
+upper bound, so `only()` falls back to `up()`.
 
-| Parameter | Type     | Default | Description                        |
-|-----------|----------|---------|------------------------------------|
-| `$token`  | `string` | —       | A key from the configured tokens.  |
+| Parameter | Type     | Default | Description                       |
+|-----------|----------|---------|-----------------------------------|
+| `$token`  | `string` | —       | A key from the configured tokens. |
 
 ::: code-group
 

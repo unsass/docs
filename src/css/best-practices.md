@@ -17,7 +17,7 @@ For a trivial static declaration, plain CSS is perfectly fine — don't wrap eve
     @include css.declaration(background, cp.create("accent", darkcyan));
 }
 
-// ➖ Unnecessary — a plain declaration is clearer
+// ❌ Overkill — a plain declaration is clearer
 .button {
     @include css.declaration(display, flex); // just write `display: flex;`
 }
@@ -48,7 +48,7 @@ token list discoverable and avoids redefining the same variable across files.
 }
 ```
 
-## Keep selector affixes consistent
+## Keep selector prefixes and suffixes consistent
 
-Pick one `$separator` convention per project (the default `:` mirrors utility-class ecosystems) and stick to it,
-so generated class names stay predictable.
+Pick one `$separator` convention per project (the default `:` mirrors utility-first frameworks such as Tailwind CSS)
+and stick to it, so generated class names stay predictable.

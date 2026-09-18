@@ -107,7 +107,7 @@ prefixed, breakpoint-scoped utility classes.
 
 :::
 
-## Context-relative type scale
+## Context-relative spacing
 
 Use [`em`](/em/getting-started) when a value should track the element's own font size — handy for spacing inside a
 heading that may be resized.

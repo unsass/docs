@@ -8,7 +8,7 @@ Recommendations for using `@unsass/breakpoint` effectively.
 
 ## Prefer a mobile-first approach
 
-Author base styles for the smallest screen, then layer larger breakpoints with `up()`:
+Author base styles for the smallest viewport, then layer larger breakpoints with `up()`:
 
 ```scss
 // ✅ Mobile first
@@ -40,29 +40,30 @@ Author base styles for the smallest screen, then layer larger breakpoints with `
 }
 ```
 
-## Use semantic token names
+## Name tokens by size, not by device
 
-When defining custom tokens, name them by intent so call sites stay readable:
+Device categories overlap and drift: a tablet in landscape is wider than many laptops. Name tokens after a size scale
+so call sites stay accurate whatever the device:
 
 ```scss
-// ✅ Clear
+// ✅ Size scale
 @use "@unsass/breakpoint" with (
     $screens: (
-        "mobile": 375px,
-        "tablet": 768px,
-        "desktop": 1024px,
-        "wide": 1440px
+        "sm": 640px,
+        "md": 768px,
+        "lg": 1024px,
+        "xl": 1440px
     )
 );
 ```
 
 ```scss
-// ❌ Ambiguous
+// ❌ Tied to devices
 @use "@unsass/breakpoint" with (
     $screens: (
-        "tiny": 375px,
-        "small": 768px,
-        "big": 1024px
+        "mobile": 375px,
+        "tablet": 768px,
+        "desktop": 1024px
     )
 );
 ```

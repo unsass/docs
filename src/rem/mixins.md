@@ -71,6 +71,6 @@ body {
 
 Sets the baseline at runtime. See [Configuration](/rem/configuration#runtime-configuration-with-config).
 
-| Parameter   | Type     | Default | Description              |
-|-------------|----------|---------|--------------------------|
-| `$baseline` | `number` | `null`  | The new baseline in `px`.|
+| Parameter   | Type     | Default | Description               |
+|-------------|----------|---------|---------------------------|
+| `$baseline` | `number` | `null`  | The new baseline in `px`. |

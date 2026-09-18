@@ -11,15 +11,15 @@ Accessed through the `selector` namespace (`@use "@unsass/selector"`).
 Generates a class selector and wraps the passed content in it. The selector name may be written with or without a
 leading dot.
 
-| Parameter         | Type             | Default | Description                                          |
-|-------------------|------------------|---------|------------------------------------------------------|
-| `$selector`       | `string`, `list` | —       | The class name, with or without a leading `.`.       |
-| `$scope`          | `string`, `list` | `null`  | Affix key(s) added before (or after) the selector.   |
-| `$separator`      | `string`         | `":"`   | Character between scope and selector.                |
-| `$suffix`         | `boolean`        | `false` | Append the scope instead of prefixing it.            |
-| `$pseudo-class`   | `string`         | `null`  | Add a pseudo-class, e.g. `"hover"`.                  |
-| `$pseudo-element` | `string`         | `null`  | Add a pseudo-element, e.g. `"before"`.               |
-| `$root`           | `boolean`        | `false` | Emit at the stylesheet root (`@at-root`).            |
+| Parameter         | Type             | Default | Description                                     |
+|-------------------|------------------|---------|-------------------------------------------------|
+| `$selector`       | `string`, `list` | —       | The class name, with or without a leading `.`.  |
+| `$scope`          | `string`, `list` | `null`  | Key(s) to prefix (or suffix) the selector with. |
+| `$separator`      | `string`         | `":"`   | Character between scope and selector.           |
+| `$suffix`         | `boolean`        | `false` | Append the scope instead of prefixing it.       |
+| `$pseudo-class`   | `string`         | `null`  | Add a pseudo-class, e.g. `"hover"`.             |
+| `$pseudo-element` | `string`         | `null`  | Add a pseudo-element, e.g. `"before"`.          |
+| `$root`           | `boolean`        | `false` | Emit at the stylesheet root (`@at-root`).       |
 
 ### Plain selector
 
@@ -156,9 +156,9 @@ A `$suffix` cannot be combined with a `$pseudo-class` or `$pseudo-element` — d
 
 Wraps content in a raw `@media` query. A thin convenience over writing the at-rule by hand.
 
-| Parameter | Type     | Default | Description                              |
-|-----------|----------|---------|------------------------------------------|
-| `$query`  | `string` | —       | The media query condition, e.g. `screen`.|
+| Parameter | Type     | Default | Description                               |
+|-----------|----------|---------|-------------------------------------------|
+| `$query`  | `string` | —       | The media query condition, e.g. `screen`. |
 
 ::: code-group
 

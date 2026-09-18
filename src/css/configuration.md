@@ -5,7 +5,7 @@ description: "Define and consume CSS custom properties with @unsass/css: create 
 # Custom Properties
 
 Beyond plain declarations, `@unsass/css` ships a custom-properties helper that lets you **define** and **consume**
-CSS variables through the same `declaration()` mixin, with optional fallbacks.
+CSS custom properties through the same `declaration()` mixin, with optional fallbacks.
 
 Import the helper alongside the main module:
 
@@ -18,10 +18,10 @@ Import the helper alongside the main module:
 
 Builds a custom-property reference. A leading `--` is added automatically if you omit it.
 
-| Parameter   | Type     | Default | Description                                  |
-|-------------|----------|---------|----------------------------------------------|
-| `$name`     | `string` | —       | The variable name, with or without `--`.     |
-| `$fallback` | `any`    | `null`  | Optional fallback value (may be another ref).|
+| Parameter   | Type     | Default | Description                                         |
+|-------------|----------|---------|-----------------------------------------------------|
+| `$name`     | `string` | —       | The variable name, with or without `--`.            |
+| `$fallback` | `any`    | `null`  | Optional fallback value (may be another reference). |
 
 ## Define a custom property
 
@@ -86,8 +86,8 @@ top of `declaration()`.
 
 Returns the custom property name, including the leading `--`.
 
-| Parameter      | Type  | Default | Description                        |
-|----------------|-------|---------|------------------------------------|
+| Parameter      | Type  | Default | Description                         |
+|----------------|-------|---------|-------------------------------------|
 | `$custom-prop` | `map` | —       | A reference built by `cp.create()`. |
 
 ```scss
@@ -98,8 +98,8 @@ cp.get-varname(cp.create("brand", darkcyan)); // --brand
 
 Returns the fallback of a reference, or `null` when none was set.
 
-| Parameter      | Type  | Default | Description                        |
-|----------------|-------|---------|------------------------------------|
+| Parameter      | Type  | Default | Description                         |
+|----------------|-------|---------|-------------------------------------|
 | `$custom-prop` | `map` | —       | A reference built by `cp.create()`. |
 
 ```scss
@@ -111,8 +111,8 @@ cp.get-fallback(cp.create("brand"));           // null
 
 Returns `true` when the value is a reference built by `cp.create()`.
 
-| Parameter | Type  | Default | Description       |
-|-----------|-------|---------|-------------------|
+| Parameter | Type  | Default | Description        |
+|-----------|-------|---------|--------------------|
 | `$value`  | `any` | —       | The value to test. |
 
 ```scss
@@ -125,8 +125,8 @@ cp.is-custom-prop(16px);               // false
 Resolves a reference into a `var()` expression, chaining nested fallbacks. This is what `declaration()` calls when a
 reference is passed as the value.
 
-| Parameter      | Type  | Default | Description                        |
-|----------------|-------|---------|------------------------------------|
+| Parameter      | Type  | Default | Description                         |
+|----------------|-------|---------|-------------------------------------|
 | `$custom-prop` | `map` | —       | A reference built by `cp.create()`. |
 
 ```scss

@@ -9,7 +9,7 @@ Recommendations for using `@unsass/em` effectively.
 ## Match the context to the element's font size
 
 `em` resolves against the element's own font size (for most properties) or the parent's (for `font-size` itself).
-Pass the context that reflects where the value will apply, otherwise the maths is correct but the result is wrong in
+Pass the context that reflects where the value will apply, otherwise the math is correct but the result is wrong in
 the browser.
 
 ```scss

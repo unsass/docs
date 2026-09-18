@@ -1,5 +1,5 @@
 ---
-description: "Get started with @unsass/selector: generate prefixed, suffixed and pseudo class selectors from one Sass mixin."
+description: "Get started with @unsass/selector: generate prefixed, suffixed and pseudo-class selectors from one Sass mixin."
 ---
 
 # Selector

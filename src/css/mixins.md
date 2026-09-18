@@ -1,5 +1,5 @@
 ---
-description: "Reference for @unsass/css mixins: declaration() for CSS declarations and selector() for affixed class selectors."
+description: "Reference for @unsass/css mixins: declaration() for CSS declarations and selector() for prefixed or suffixed class selectors."
 ---
 
 # Mixins
@@ -11,11 +11,11 @@ Accessed through the `css` namespace (`@use "@unsass/css"`).
 Emits a CSS declaration. Accepts single values, space-separated lists, and comma-separated lists (wrapped in
 parentheses). Also integrates with [custom properties](/css/configuration).
 
-| Parameter    | Type      | Default | Description                          |
-|--------------|-----------|---------|--------------------------------------|
-| `$property`  | `string`  | —       | The CSS property.                    |
-| `$value`     | `any`     | `null`  | The value (or custom-property ref).  |
-| `$important` | `boolean` | `false` | Append `!important`.                 |
+| Parameter    | Type      | Default | Description                               |
+|--------------|-----------|---------|-------------------------------------------|
+| `$property`  | `string`  | —       | The CSS property.                         |
+| `$value`     | `any`     | `null`  | The value (or custom-property reference). |
+| `$important` | `boolean` | `false` | Append `!important`.                      |
 
 ::: code-group
 
@@ -60,15 +60,16 @@ parentheses). Also integrates with [custom properties](/css/configuration).
 
 ## `selector($key, $separator, $suffix, $selector)` <Badge type="tip" text="mixin" />
 
-Generates a class selector affixed with a key — useful for responsive or state variants. The target must be a class
-selector, otherwise the mixin raises an `@error`. A key starting with a digit (like `2xl`) is escaped automatically.
+Generates a class selector prefixed (or suffixed) with a key — useful for responsive or state variants. The target must
+be a class selector, otherwise the mixin raises an `@error`. A key starting with a digit (like `2xl`) is escaped
+automatically.
 
-| Parameter    | Type      | Default | Description                                   |
-|--------------|-----------|---------|-----------------------------------------------|
-| `$key`       | `string`  | —       | The affix key, e.g. `"md"`.                   |
-| `$separator` | `string`  | `":"`   | Character placed between key and selector.    |
-| `$suffix`    | `boolean` | `false` | Append the key instead of prefixing it.       |
-| `$selector`  | `string`  | `&`     | Target selector (defaults to the parent).     |
+| Parameter    | Type      | Default | Description                                |
+|--------------|-----------|---------|--------------------------------------------|
+| `$key`       | `string`  | —       | The variant key, e.g. `"md"`.              |
+| `$separator` | `string`  | `":"`   | Character placed between key and selector. |
+| `$suffix`    | `boolean` | `false` | Append the key instead of prefixing it.    |
+| `$selector`  | `string`  | `&`     | Target selector (defaults to the parent).  |
 
 ::: code-group
 

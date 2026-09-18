@@ -9,13 +9,13 @@ versions independently, and emits plain, standard CSS — so you install only wh
 
 ## The packages
 
-| Package | Purpose |
-|---------|---------|
-| **[@unsass/breakpoint](/breakpoint/getting-started)** | Centralized, composable responsive breakpoints. |
-| **[@unsass/css](/css/getting-started)** | CSS declarations and selectors, with custom-property support. |
-| **[@unsass/em](/em/getting-started)** | Context-relative pixel-to-`em` conversion. |
-| **[@unsass/rem](/rem/getting-started)** | Baseline-relative pixel-to-`rem` conversion. |
-| **[@unsass/selector](/selector/getting-started)** | Prefixed, suffixed and pseudo selector generation. |
+| Package                                               | Purpose                                                       |
+|-------------------------------------------------------|---------------------------------------------------------------|
+| **[@unsass/breakpoint](/breakpoint/getting-started)** | Centralized, composable responsive breakpoints.               |
+| **[@unsass/css](/css/getting-started)**               | CSS declarations and selectors, with custom-property support. |
+| **[@unsass/em](/em/getting-started)**                 | Context-relative pixel-to-`em` conversion.                    |
+| **[@unsass/rem](/rem/getting-started)**               | Baseline-relative pixel-to-`rem` conversion.                  |
+| **[@unsass/selector](/selector/getting-started)**     | Prefixed, suffixed and pseudo selector generation.            |
 
 Packages stay independent, but a few build on one another: `@unsass/em` and `@unsass/rem` use
 `@unsass/css` for their `declaration()` mixin. Such dependencies are installed automatically — you never add them by

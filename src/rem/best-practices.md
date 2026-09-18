@@ -8,8 +8,10 @@ Recommendations for using `@unsass/rem` effectively.
 
 ## Stick to a 16px baseline
 
-`16px` is the browser default and respects the user's font-size preference. Resetting the baseline to `10px` makes
-the maths tidier but quietly overrides accessibility settings — avoid it unless you have a specific reason.
+`16px` is the browser default, so `1rem` matches what users expect and their font-size preference keeps working
+(WCAG 1.4.4, Resize Text). A `10px` baseline makes the math tidier, but `1rem` then no longer equals the default
+text size: unconverted values, third-party components and browser defaults end up out of scale. Avoid it unless you
+have a specific reason.
 
 ```scss
 // ✅ Good

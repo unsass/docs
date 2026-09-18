@@ -88,7 +88,7 @@ failing build as the tool catching a real mistake — prefer fixing the call ove
 
 ## Keep generated CSS lean
 
-Group rules that share a media query or selector affix so the compiler emits fewer duplicated blocks:
+Group rules that share a media query so the compiler emits fewer duplicated blocks:
 
 ```scss
 // ✅ One @media block
