@@ -168,16 +168,18 @@ export default defineConfig({
         nav: [
             {
                 text: 'Guide',
-                link: '/guide/what-is-unsass'
+                link: '/guide/what-is-unsass',
+                activeMatch: '^/guide/'
             },
             {
                 text: 'Packages',
+                activeMatch: '^/(breakpoint|css|em|rem|selector)/',
                 items: [
-                    { text: 'Breakpoint', link: '/breakpoint/getting-started' },
-                    { text: 'CSS', link: '/css/getting-started' },
-                    { text: 'Em', link: '/em/getting-started' },
-                    { text: 'Rem', link: '/rem/getting-started' },
-                    { text: 'Selector', link: '/selector/getting-started' }
+                    { text: 'Breakpoint', link: '/breakpoint/getting-started', activeMatch: '^/breakpoint/' },
+                    { text: 'CSS', link: '/css/getting-started', activeMatch: '^/css/' },
+                    { text: 'Em', link: '/em/getting-started', activeMatch: '^/em/' },
+                    { text: 'Rem', link: '/rem/getting-started', activeMatch: '^/rem/' },
+                    { text: 'Selector', link: '/selector/getting-started', activeMatch: '^/selector/' }
                 ]
             }
         ],
