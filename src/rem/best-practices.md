@@ -57,4 +57,5 @@ $gap: rem.convert(24px);
 ## Don't convert unitless or non-length values
 
 Leave `opacity`, `z-index`, `flex`, percentages and viewport units in their own units — only pixel lengths benefit
-from `rem` conversion.
+from `rem` conversion. Passing a value with another unit (`%`, `em`, `vw`…) to `convert()` or `declaration()` raises
+a compile-time error.

@@ -14,7 +14,7 @@ Import the helper alongside the main module:
 @use "@unsass/css/custom-properties" as cp;
 ```
 
-## `cp.create($name, $fallback)`
+## `cp.create($name, $fallback)` <Badge type="tip" text="function" />
 
 Builds a custom-property reference. A leading `--` is added automatically if you omit it.
 
@@ -76,3 +76,59 @@ Pass a reference as the **value** to emit a `var()` call. A fallback, if provide
 A reference's fallback can itself be another reference, producing nested `var()` calls —
 `cp.create("a", cp.create("b", red))` emits `var(--a, var(--b, red))`.
 :::
+
+## Inspect a reference
+
+The same module exposes helpers to read a reference or resolve it yourself — handy when you build your own mixins on
+top of `declaration()`.
+
+### `cp.get-varname($custom-prop)` <Badge type="tip" text="function" />
+
+Returns the custom property name, including the leading `--`.
+
+| Parameter      | Type  | Default | Description                        |
+|----------------|-------|---------|------------------------------------|
+| `$custom-prop` | `map` | —       | A reference built by `cp.create()`. |
+
+```scss
+cp.get-varname(cp.create("brand", darkcyan)); // --brand
+```
+
+### `cp.get-fallback($custom-prop)` <Badge type="tip" text="function" />
+
+Returns the fallback of a reference, or `null` when none was set.
+
+| Parameter      | Type  | Default | Description                        |
+|----------------|-------|---------|------------------------------------|
+| `$custom-prop` | `map` | —       | A reference built by `cp.create()`. |
+
+```scss
+cp.get-fallback(cp.create("brand", darkcyan)); // darkcyan
+cp.get-fallback(cp.create("brand"));           // null
+```
+
+### `cp.is-custom-prop($value)` <Badge type="tip" text="function" />
+
+Returns `true` when the value is a reference built by `cp.create()`.
+
+| Parameter | Type  | Default | Description       |
+|-----------|-------|---------|-------------------|
+| `$value`  | `any` | —       | The value to test. |
+
+```scss
+cp.is-custom-prop(cp.create("brand")); // true
+cp.is-custom-prop(16px);               // false
+```
+
+### `cp.create-var($custom-prop)` <Badge type="tip" text="function" />
+
+Resolves a reference into a `var()` expression, chaining nested fallbacks. This is what `declaration()` calls when a
+reference is passed as the value.
+
+| Parameter      | Type  | Default | Description                        |
+|----------------|-------|---------|------------------------------------|
+| `$custom-prop` | `map` | —       | A reference built by `cp.create()`. |
+
+```scss
+cp.create-var(cp.create("brand", darkcyan)); // var(--brand, darkcyan)
+```

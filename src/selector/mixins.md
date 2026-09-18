@@ -13,7 +13,7 @@ leading dot.
 
 | Parameter         | Type             | Default | Description                                          |
 |-------------------|------------------|---------|------------------------------------------------------|
-| `$selector`       | `string`         | —       | The class name, with or without a leading `.`.       |
+| `$selector`       | `string`, `list` | —       | The class name, with or without a leading `.`.       |
 | `$scope`          | `string`, `list` | `null`  | Affix key(s) added before (or after) the selector.   |
 | `$separator`      | `string`         | `":"`   | Character between scope and selector.                |
 | `$suffix`         | `boolean`        | `false` | Append the scope instead of prefixing it.            |
@@ -81,6 +81,33 @@ leading dot.
 
 :::
 
+### Multiple scopes
+
+Pass a list to `$scope` to chain several keys — in order, before (or after, with `$suffix`) the selector.
+
+::: code-group
+
+```scss [SCSS]
+@use "@unsass/selector";
+
+@include selector.create("foo", ("sm" "md")) {
+    color: darkcyan;
+}
+```
+
+```css [CSS]
+.sm:md:foo {
+    color: darkcyan;
+}
+```
+
+:::
+
+::: tip
+A scope starting with a digit (like `2xl`) is escaped automatically: `create("foo", "2xl")` emits
+`.\32 xl\:foo`.
+:::
+
 ### Pseudo-class
 
 ::: code-group
@@ -125,13 +152,13 @@ leading dot.
 A `$suffix` cannot be combined with a `$pseudo-class` or `$pseudo-element` — doing so raises a compile-time error.
 :::
 
-## `media($args)` <Badge type="tip" text="mixin" />
+## `media($query)` <Badge type="tip" text="mixin" />
 
 Wraps content in a raw `@media` query. A thin convenience over writing the at-rule by hand.
 
 | Parameter | Type     | Default | Description                              |
 |-----------|----------|---------|------------------------------------------|
-| `$args`   | `string` | —       | The media query condition, e.g. `screen`.|
+| `$query`  | `string` | —       | The media query condition, e.g. `screen`.|
 
 ::: code-group
 

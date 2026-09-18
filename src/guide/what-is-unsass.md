@@ -17,6 +17,10 @@ versions independently, and emits plain, standard CSS — so you install only wh
 | **[@unsass/rem](/rem/getting-started)** | Baseline-relative pixel-to-`rem` conversion. |
 | **[@unsass/selector](/selector/getting-started)** | Prefixed, suffixed and pseudo selector generation. |
 
+Packages stay independent, but a few build on one another: `@unsass/em` and `@unsass/rem` use
+`@unsass/css` for their `declaration()` mixin. Such dependencies are installed automatically — you never add them by
+hand.
+
 ## Principles
 
 ### 🧩 Modular
@@ -43,7 +47,8 @@ The Sass logic stays at build time. UnSass produces clean, standard CSS and ship
 UnSass targets the modern Dart Sass module system (`@use` / `@forward`).
 
 ::: warning
-`@unsass/breakpoint` relies on the modern Sass `if()` syntax and requires a Dart Sass compiler **`>= 1.95.0`**.
+Every package relies on the modern Sass `if()` syntax (directly, or through `@unsass/css`) and requires a Dart Sass
+compiler **`>= 1.95.0`**.
 :::
 
 ## Next steps

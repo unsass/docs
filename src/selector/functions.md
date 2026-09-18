@@ -1,5 +1,5 @@
 ---
-description: "Reference for @unsass/selector functions: pseudo-class, pseudo-element, to-class and to-id selector helpers."
+description: "Reference for @unsass/selector functions: pseudo-class, pseudo-element, is, where, has, exclude, to-class and to-id selector helpers."
 ---
 
 # Functions
@@ -34,25 +34,78 @@ Appends a pseudo-element to a selector string.
 selector.pseudo-element(".foo", "before"); // ".foo::before"
 ```
 
-## `to-class($selector)` <Badge type="tip" text="function" />
+## `is($selector, $args...)` <Badge type="tip" text="function" />
+
+Appends an `:is()` pseudo-class matching any of the given selectors.
+
+| Parameter   | Type      | Default | Description                     |
+|-------------|-----------|---------|---------------------------------|
+| `$selector` | `string`  | —       | The base selector.              |
+| `$args…`    | `arglist` | —       | One or more selectors to match. |
+
+```scss
+selector.is("article", "h1", "h2"); // "article:is(h1, h2)"
+```
+
+## `where($selector, $args...)` <Badge type="tip" text="function" />
+
+Appends a `:where()` pseudo-class — like `:is()`, but with zero specificity.
+
+| Parameter   | Type      | Default | Description                     |
+|-------------|-----------|---------|---------------------------------|
+| `$selector` | `string`  | —       | The base selector.              |
+| `$args…`    | `arglist` | —       | One or more selectors to match. |
+
+```scss
+selector.where(".prose", "a", "button"); // ".prose:where(a, button)"
+```
+
+## `has($selector, $args...)` <Badge type="tip" text="function" />
+
+Appends a `:has()` pseudo-class matching elements that contain the given relative selectors.
+
+| Parameter   | Type      | Default | Description                                 |
+|-------------|-----------|---------|---------------------------------------------|
+| `$selector` | `string`  | —       | The base selector.                          |
+| `$args…`    | `arglist` | —       | One or more relative selectors to look for. |
+
+```scss
+selector.has(".card", "> img"); // ".card:has(> img)"
+```
+
+## `exclude($selector, $args...)` <Badge type="tip" text="function" />
+
+Appends a `:not()` pseudo-class excluding the given selectors. Named `exclude` because `not` is a reserved Sass
+keyword.
+
+| Parameter   | Type      | Default | Description                       |
+|-------------|-----------|---------|-----------------------------------|
+| `$selector` | `string`  | —       | The base selector.                |
+| `$args…`    | `arglist` | —       | One or more selectors to exclude. |
+
+```scss
+selector.exclude(".btn", ".btn--disabled"); // ".btn:not(.btn--disabled)"
+```
+
+## `to-class($name)` <Badge type="tip" text="function" />
 
 Prefixes a name with `.` to form a class selector.
 
-| Parameter   | Type     | Default | Description    |
-|-------------|----------|---------|----------------|
-| `$selector` | `string` | —       | The bare name. |
+| Parameter | Type     | Default | Description    |
+|-----------|----------|---------|----------------|
+| `$name`   | `string` | —       | The bare name. |
 
 ```scss
 selector.to-class("foo"); // ".foo"
 ```
 
-## `to-id($selector)` <Badge type="tip" text="function" />
+## `to-id($name)` <Badge type="tip" text="function" />
 
 Prefixes a name with `#` to form an id selector.
 
-| Parameter   | Type     | Default | Description    |
-|-------------|----------|---------|----------------|
-| `$selector` | `string` | —       | The bare name. |
+| Parameter | Type     | Default | Description    |
+|-----------|----------|---------|----------------|
+| `$name`   | `string` | —       | The bare name. |
 
 ```scss
 selector.to-id("foo"); // "#foo"

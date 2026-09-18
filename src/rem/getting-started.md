@@ -30,6 +30,10 @@ pnpm add @unsass/rem
 
 :::
 
+::: warning Requirement
+Rem builds on [`@unsass/css`](/css/getting-started) (installed automatically), which relies on the modern Sass `if()` syntax, so a Dart Sass compiler **`>= 1.95.0`** is required.
+:::
+
 ## Basic usage
 
 ::: code-group

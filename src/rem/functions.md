@@ -9,8 +9,13 @@ Accessed through the `rem` namespace (`@use "@unsass/rem"`). Conversions use the
 
 ## `convert($values...)` <Badge type="tip" text="function" />
 
-Converts pixel values to `rem`. Accepts single values, space-separated lists, and comma-separated lists. Non-pixel
-parts of a value (keywords, colors, `0`) pass through untouched.
+Converts pixel values to `rem`. Accepts single values, space-separated lists, and comma-separated lists. Unitless
+numbers are treated as pixels; keywords, colors and `0` pass through untouched.
+
+::: warning
+A value with a unit other than `px` (`%`, `em`, `vw`…) raises a compile-time error — leave those out of the
+conversion.
+:::
 
 | Parameter   | Type      | Default | Description                |
 |-------------|-----------|---------|----------------------------|

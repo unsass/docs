@@ -5,7 +5,8 @@ description: "Reference for @unsass/breakpoint functions: get-value, get-next, g
 # Functions
 
 Accessed through the `breakpoint` namespace (`@use "@unsass/breakpoint"`). These helpers read the configured tokens
-and back the [mixins](/breakpoint/mixins) — useful when you need a raw value or want to drive your own logic.
+and back the [mixins](/breakpoint/mixins) — useful when you need a raw value or want to drive your own logic. Tokens
+are always ordered by ascending width.
 
 ## `get-value($token)` <Badge type="tip" text="function" />
 
@@ -45,7 +46,7 @@ breakpoint.get-prev("lg"); // "md"
 
 ## `get-screens($exclude...)` <Badge type="tip" text="function" />
 
-Returns the full token map, optionally omitting one or more keys.
+Returns the full token map (sorted by ascending width), optionally omitting one or more keys.
 
 | Parameter    | Type      | Default | Description              |
 |--------------|-----------|---------|--------------------------|

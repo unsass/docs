@@ -67,4 +67,4 @@ For a single source of truth, forward configured packages from one file and `@us
 ## Requirements
 
 - A Dart Sass compiler using the module system (`@use` / `@forward`).
-- `@unsass/breakpoint` additionally requires Dart Sass **`>= 1.95.0`** (modern `if()` syntax).
+- Dart Sass **`>= 1.95.0`** for every package (modern `if()` syntax).

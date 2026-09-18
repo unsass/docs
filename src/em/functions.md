@@ -9,7 +9,8 @@ Accessed through the `em` namespace (`@use "@unsass/em"`).
 ## `convert($values...)` <Badge type="tip" text="function" />
 
 Converts pixel values to `em`. Pass any number of values followed by the **context** as the **last argument** — the
-pixel value that `1em` represents. Non-pixel parts of a value (keywords, colors, `0`) pass through untouched.
+pixel value that `1em` represents. Unitless numbers are treated as pixels; keywords, colors and `0` pass through
+untouched.
 
 | Parameter   | Type      | Default | Description                                                       |
 |-------------|-----------|---------|-------------------------------------------------------------------|
@@ -17,7 +18,8 @@ pixel value that `1em` represents. Non-pixel parts of a value (keywords, colors,
 
 ::: warning
 The context is mandatory and must be a number in `px` (or unitless). Omitting it, or passing a non-number, raises a
-compile-time error.
+compile-time error. So does any value with a unit other than `px` (`%`, `rem`, `vw`…) — leave those out of the
+conversion.
 :::
 
 ::: code-group

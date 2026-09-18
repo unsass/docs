@@ -43,4 +43,5 @@ is the better fit — it converts against one configurable baseline instead of a
 ## Don't convert what shouldn't scale
 
 Leave hairline borders, `0`, and non-length values as-is — `convert()` already passes keywords, colors and `0`
-through untouched, so there's no need to route them through it.
+through untouched, so there's no need to route them through it. Values in another unit (`%`, `rem`, `vw`…) are
+rejected with an error, so keep them out of `convert()` and `declaration()`.

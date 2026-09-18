@@ -42,6 +42,13 @@ existing token or add a new one.
 | `xl`  | `1200px` | Large desktop screen.                                |
 | `2xl` | `1400px` | Extra large desktop screen.                          |
 
+Tokens are **sorted by ascending width** automatically, whatever the order you declare them in, so
+`only()`, `get-next()` and `get-prev()` always follow the real width order.
+
+::: info Zero-width token
+A token whose value is `0` produces no media query: `up()` and `down()` output their content unwrapped.
+:::
+
 ## `$reset`
 
 Set to `true` to discard the default tokens entirely and start from a clean slate with your own `$screens`.

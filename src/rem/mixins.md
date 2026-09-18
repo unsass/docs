@@ -41,7 +41,7 @@ Emits a declaration whose value is converted to `rem`. A thin wrapper over [`con
 ## `baseline($important)` <Badge type="tip" text="mixin" />
 
 Emits a root `font-size` that maps `1rem` to the configured baseline. With the default `16px` baseline this is
-`100%`, which respects the user's browser font-size preference.
+`100%`, which respects the user's browser font-size preference. With a `10px` baseline it emits `62.5%`.
 
 | Parameter    | Type      | Default | Description          |
 |--------------|-----------|---------|----------------------|

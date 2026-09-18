@@ -6,6 +6,11 @@ description: "Reference for @unsass/breakpoint mixins: up, down, only, between a
 
 Accessed through the `breakpoint` namespace (`@use "@unsass/breakpoint"`).
 
+::: warning
+`up()`, `down()`, `only()` and `between()` raise an `@error` when a token doesn't exist, listing the available
+ones.
+:::
+
 ## `up($token)` <Badge type="tip" text="mixin" />
 
 Applies a `min-width` media query — styles take effect at the token width and above.

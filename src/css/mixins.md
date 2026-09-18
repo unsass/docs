@@ -61,7 +61,7 @@ parentheses). Also integrates with [custom properties](/css/configuration).
 ## `selector($key, $separator, $suffix, $selector)` <Badge type="tip" text="mixin" />
 
 Generates a class selector affixed with a key — useful for responsive or state variants. The target must be a class
-selector.
+selector, otherwise the mixin raises an `@error`. A key starting with a digit (like `2xl`) is escaped automatically.
 
 | Parameter    | Type      | Default | Description                                   |
 |--------------|-----------|---------|-----------------------------------------------|

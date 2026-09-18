@@ -30,6 +30,10 @@ pnpm add @unsass/selector
 
 :::
 
+::: warning Requirement
+Selector relies on the modern Sass `if()` syntax, so a Dart Sass compiler **`>= 1.95.0`** is required.
+:::
+
 ## Basic usage
 
 ::: code-group
