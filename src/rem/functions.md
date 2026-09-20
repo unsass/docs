@@ -7,7 +7,7 @@ description: "Reference for @unsass/rem: the convert() function for baseline-rel
 Accessed through the `rem` namespace (`@use "@unsass/rem"`). Conversions use the configured
 [`$baseline`](/rem/configuration).
 
-## `convert($values...)` <Badge type="tip" text="function" />
+## `convert($values...)`
 
 Converts pixel values to `rem`. Accepts single values, space-separated lists, and comma-separated lists. Unitless
 numbers are treated as pixels; keywords, colors and `0` pass through untouched.

@@ -6,7 +6,7 @@ description: "Reference for @unsass/var functions: create, create-name, name, fa
 
 Accessed through the `var` namespace (`@use "@unsass/var"`).
 
-## `create($name, $fallback)` <Badge type="tip" text="function" />
+## `create($name, $fallback)`
 
 Creates a `var()` CSS function. The `--` prefix is added to the name when it is missing, and the fallback is optional.
 
@@ -35,7 +35,7 @@ Creates a `var()` CSS function. The `--` prefix is added to the name when it is 
 
 :::
 
-## `create-name($name)` <Badge type="tip" text="function" />
+## `create-name($name)`
 
 Returns a custom property name, prefixed with `--` when the prefix is missing.
 
@@ -48,7 +48,7 @@ var.create-name("primary-color");   // "--primary-color"
 var.create-name("--primary-color"); // "--primary-color"
 ```
 
-## `name($var)` <Badge type="tip" text="function" />
+## `name($var)`
 
 Returns the name of a `var()` function.
 
@@ -60,7 +60,7 @@ Returns the name of a `var()` function.
 var.name(var(--primary-color, darkcyan)); // "--primary-color"
 ```
 
-## `fallback($var)` <Badge type="tip" text="function" />
+## `fallback($var)`
 
 Returns the fallback of a `var()` function.
 
@@ -72,7 +72,7 @@ Returns the fallback of a `var()` function.
 var.fallback(var(--primary-color, darkcyan)); // "darkcyan"
 ```
 
-## `parse($var)` <Badge type="tip" text="function" />
+## `parse($var)`
 
 Returns a map with the `name` and `fallback` keys of a `var()` function.
 

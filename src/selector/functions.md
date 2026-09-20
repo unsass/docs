@@ -8,7 +8,7 @@ Accessed through the `selector` namespace (`@use "@unsass/selector"`). These str
 fragments; [`create()`](/selector/mixins) uses them internally, but they're available when you compose selectors by
 hand.
 
-## `pseudo-class($selector, $pseudo-class)` <Badge type="tip" text="function" />
+## `pseudo-class($selector, $pseudo-class)`
 
 Appends a pseudo-class to a selector string.
 
@@ -21,7 +21,7 @@ Appends a pseudo-class to a selector string.
 selector.pseudo-class(".foo", "hover"); // ".foo:hover"
 ```
 
-## `pseudo-element($selector, $pseudo-element)` <Badge type="tip" text="function" />
+## `pseudo-element($selector, $pseudo-element)`
 
 Appends a pseudo-element to a selector string.
 
@@ -34,7 +34,7 @@ Appends a pseudo-element to a selector string.
 selector.pseudo-element(".foo", "before"); // ".foo::before"
 ```
 
-## `is($selector, $args...)` <Badge type="tip" text="function" />
+## `is($selector, $args...)`
 
 Appends an `:is()` pseudo-class matching any of the given selectors.
 
@@ -47,7 +47,7 @@ Appends an `:is()` pseudo-class matching any of the given selectors.
 selector.is("article", "h1", "h2"); // "article:is(h1, h2)"
 ```
 
-## `where($selector, $args...)` <Badge type="tip" text="function" />
+## `where($selector, $args...)`
 
 Appends a `:where()` pseudo-class — like `:is()`, but with zero specificity.
 
@@ -60,7 +60,7 @@ Appends a `:where()` pseudo-class — like `:is()`, but with zero specificity.
 selector.where(".prose", "a", "button"); // ".prose:where(a, button)"
 ```
 
-## `has($selector, $args...)` <Badge type="tip" text="function" />
+## `has($selector, $args...)`
 
 Appends a `:has()` pseudo-class matching elements that contain the given relative selectors.
 
@@ -73,7 +73,7 @@ Appends a `:has()` pseudo-class matching elements that contain the given relativ
 selector.has(".card", "> img"); // ".card:has(> img)"
 ```
 
-## `exclude($selector, $args...)` <Badge type="tip" text="function" />
+## `exclude($selector, $args...)`
 
 Appends a `:not()` pseudo-class excluding the given selectors. Named `exclude` because `not` is a reserved Sass
 keyword.
@@ -87,7 +87,7 @@ keyword.
 selector.exclude(".btn", ".btn--disabled"); // ".btn:not(.btn--disabled)"
 ```
 
-## `to-class($name)` <Badge type="tip" text="function" />
+## `to-class($name)`
 
 Prefixes a name with `.` to form a class selector.
 
@@ -99,7 +99,7 @@ Prefixes a name with `.` to form a class selector.
 selector.to-class("foo"); // ".foo"
 ```
 
-## `to-id($name)` <Badge type="tip" text="function" />
+## `to-id($name)`
 
 Prefixes a name with `#` to form an id selector.
 

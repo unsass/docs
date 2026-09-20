@@ -7,7 +7,7 @@ description: "Reference for @unsass/rem mixins: declaration(), baseline() and co
 Accessed through the `rem` namespace (`@use "@unsass/rem"`). Conversions use the configured
 [`$baseline`](/rem/configuration).
 
-## `declaration($property, $value, $important)` <Badge type="tip" text="mixin" />
+## `declaration($property, $value, $important)`
 
 Emits a declaration whose value is converted to `rem`. A thin wrapper over [`convert()`](/rem/functions) plus
 [`css.declaration()`](/css/mixins).
@@ -38,7 +38,7 @@ Emits a declaration whose value is converted to `rem`. A thin wrapper over [`con
 
 :::
 
-## `baseline($important)` <Badge type="tip" text="mixin" />
+## `baseline($important)`
 
 Emits a root `font-size` that maps `1rem` to the configured baseline. With the default `16px` baseline this is
 `100%`, which respects the user's browser font-size preference. With a `10px` baseline it emits `62.5%`.
@@ -67,7 +67,7 @@ body {
 
 :::
 
-## `config($baseline)` <Badge type="tip" text="mixin" />
+## `config($baseline)`
 
 Sets the baseline at runtime. See [Configuration](/rem/configuration#runtime-configuration-with-config).
 

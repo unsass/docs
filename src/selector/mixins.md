@@ -6,7 +6,7 @@ description: "Reference for @unsass/selector mixins: create() for prefixed, suff
 
 Accessed through the `selector` namespace (`@use "@unsass/selector"`).
 
-## `create($selector, $scope, $separator, $suffix, $pseudo-class, $pseudo-element, $root)` <Badge type="tip" text="mixin" />
+## `create($selector, $scope, $separator, $suffix, $pseudo-class, $pseudo-element, $root)`
 
 Generates a class selector and wraps the passed content in it. The selector name may be written with or without a
 leading dot.
@@ -152,7 +152,7 @@ A scope starting with a digit (like `2xl`) is escaped automatically: `create("fo
 A `$suffix` cannot be combined with a `$pseudo-class` or `$pseudo-element` — doing so raises a compile-time error.
 :::
 
-## `media($query)` <Badge type="tip" text="mixin" />
+## `media($query)`
 
 Wraps content in a raw `@media` query. A thin convenience over writing the at-rule by hand.
 

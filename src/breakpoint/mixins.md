@@ -11,7 +11,7 @@ Accessed through the `breakpoint` namespace (`@use "@unsass/breakpoint"`).
 ones.
 :::
 
-## `up($token)` <Badge type="tip" text="mixin" />
+## `up($token)`
 
 Emits a `min-width` media query: the styles apply from the token's viewport width and up.
 
@@ -41,7 +41,7 @@ Emits a `min-width` media query: the styles apply from the token's viewport widt
 
 :::
 
-## `down($token)` <Badge type="tip" text="mixin" />
+## `down($token)`
 
 Emits a `max-width` media query: the styles apply below the token's viewport width. The maximum is the token value
 minus `0.02px`, so it never overlaps `up()` on fractional viewport widths.
@@ -72,7 +72,7 @@ minus `0.02px`, so it never overlaps `up()` on fractional viewport widths.
 
 :::
 
-## `only($token)` <Badge type="tip" text="mixin" />
+## `only($token)`
 
 Targets a single breakpoint range: from the token's width up to just before the **next** token. The last token has no
 upper bound, so `only()` falls back to `up()`.
@@ -103,7 +103,7 @@ upper bound, so `only()` falls back to `up()`.
 
 :::
 
-## `between($min, $max)` <Badge type="tip" text="mixin" />
+## `between($min, $max)`
 
 Targets a custom range between two tokens. The upper bound is the `$max` token value minus `0.02px`. `$min` must be
 smaller than `$max`, otherwise the mixin raises an `@error`.
@@ -135,7 +135,7 @@ smaller than `$max`, otherwise the mixin raises an `@error`.
 
 :::
 
-## `config($screens, $reset)` <Badge type="tip" text="mixin" />
+## `config($screens, $reset)`
 
 Adjusts the active tokens at runtime. See [Configuration](/breakpoint/configuration#runtime-configuration-with-config).
 

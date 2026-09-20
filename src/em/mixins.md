@@ -6,7 +6,7 @@ description: "Reference for @unsass/em: the declaration() mixin that emits em-co
 
 Accessed through the `em` namespace (`@use "@unsass/em"`).
 
-## `declaration($property, $value, $context, $important)` <Badge type="tip" text="mixin" />
+## `declaration($property, $value, $context, $important)`
 
 Emits a declaration whose value is converted to `em`. A thin wrapper over [`convert()`](/em/functions) plus
 [`css.declaration()`](/css/mixins).

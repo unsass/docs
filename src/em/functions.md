@@ -6,7 +6,7 @@ description: "Reference for @unsass/em: the convert() function for context-relat
 
 Accessed through the `em` namespace (`@use "@unsass/em"`).
 
-## `convert($values...)` <Badge type="tip" text="function" />
+## `convert($values...)`
 
 Converts pixel values to `em`. Pass any number of values followed by the **context** as the **last argument** — the
 pixel value that `1em` represents. Unitless numbers are treated as pixels; keywords, colors and `0` pass through

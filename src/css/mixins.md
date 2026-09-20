@@ -6,7 +6,7 @@ description: "Reference for @unsass/css mixins: declaration() for CSS declaratio
 
 Accessed through the `css` namespace (`@use "@unsass/css"`).
 
-## `declaration($property, $value, $important)` <Badge type="tip" text="mixin" />
+## `declaration($property, $value, $important)`
 
 Emits a CSS declaration. Accepts single values, space-separated lists, and comma-separated lists (wrapped in
 parentheses). Also integrates with [custom properties](/css/configuration).
@@ -58,7 +58,7 @@ parentheses). Also integrates with [custom properties](/css/configuration).
 
 :::
 
-## `selector($key, $separator, $suffix, $selector)` <Badge type="tip" text="mixin" />
+## `selector($key, $separator, $suffix, $selector)`
 
 Generates a class selector prefixed (or suffixed) with a key — useful for responsive or state variants. The target must
 be a class selector, otherwise the mixin raises an `@error`. A key starting with a digit (like `2xl`) is escaped

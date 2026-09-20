@@ -7,7 +7,7 @@ description: "Reference for @unsass/string functions: replace, to-number, from-n
 Accessed through the `string` namespace (`@use "@unsass/string"`). Every function is a pure helper that returns a new
 value and never mutates its input.
 
-## `replace($string, $query, $replace)` <Badge type="tip" text="function" />
+## `replace($string, $query, $replace)`
 
 Replaces **every** occurrence of a substring. Omit `$replace` to remove the substring.
 
@@ -22,7 +22,7 @@ string.replace("foo bar baz", " ", "-"); // "foo-bar-baz"
 string.replace("foo-bar-baz", "-");      // "foobarbaz"
 ```
 
-## `to-number($value)` <Badge type="tip" text="function" />
+## `to-number($value)`
 
 Converts a string of digits to a number.
 
@@ -39,7 +39,7 @@ Only digits are supported. A sign, a decimal point or a unit (`"-1"`, `"1.5"`, `
 a Sass error.
 :::
 
-## `from-number($value)` <Badge type="tip" text="function" />
+## `from-number($value)`
 
 Converts a number to a string. A unit, if any, is kept.
 
@@ -52,7 +52,7 @@ string.from-number(10);   // "10"
 string.from-number(10px); // "10px"
 ```
 
-## `starts-with($string, $substring)` <Badge type="tip" text="function" />
+## `starts-with($string, $substring)`
 
 Checks whether a string starts with a substring.
 
@@ -66,7 +66,7 @@ string.starts-with("button-label", "button"); // true
 string.starts-with("button-label", "btn");    // false
 ```
 
-## `ends-with($string, $substring)` <Badge type="tip" text="function" />
+## `ends-with($string, $substring)`
 
 Checks whether a string ends with a substring.
 
@@ -80,7 +80,7 @@ string.ends-with("button-label", "label");  // true
 string.ends-with("button-label", "button"); // false
 ```
 
-## `trim-start($string, $target)` <Badge type="tip" text="function" />
+## `trim-start($string, $target)`
 
 Removes **one** leading occurrence of a target.
 
@@ -94,7 +94,7 @@ string.trim-start("--primary-color", "--"); // "primary-color"
 string.trim-start("  foo");                 // " foo" (one space removed)
 ```
 
-## `trim-end($string, $target)` <Badge type="tip" text="function" />
+## `trim-end($string, $target)`
 
 Removes **one** trailing occurrence of a target.
 
@@ -108,7 +108,7 @@ string.trim-end("primary-color--", "--"); // "primary-color"
 string.trim-end("foo  ");                 // "foo " (one space removed)
 ```
 
-## `trim($string, $start, $end)` <Badge type="tip" text="function" />
+## `trim($string, $start, $end)`
 
 Removes one leading and one trailing occurrence. `$end` defaults to `$start`.
 
@@ -123,7 +123,7 @@ string.trim(" foo ");                             // "foo"
 string.trim("var(--primary-color)", "var(", ")"); // "--primary-color"
 ```
 
-## `combine($values...)` <Badge type="tip" text="function" />
+## `combine($values...)`
 
 Joins strings with a dash. Falsy values (`null`, `false`) are skipped, so optional parts can be passed as they are.
 

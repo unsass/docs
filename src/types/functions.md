@@ -7,7 +7,7 @@ description: "Reference for @unsass/types functions: is-number, is-string, is-co
 Accessed through the `types` namespace (`@use "@unsass/types"`). Every function takes a single `$value` and returns a
 boolean.
 
-## `is-number($value)` <Badge type="tip" text="function" />
+## `is-number($value)`
 
 Checks whether a value is a number, with or without a unit.
 
@@ -21,7 +21,7 @@ types.is-number(12px); // true
 types.is-number("12"); // false
 ```
 
-## `is-string($value)` <Badge type="tip" text="function" />
+## `is-string($value)`
 
 Checks whether a value is a string, quoted or not.
 
@@ -35,7 +35,7 @@ types.is-string(foo);   // true
 types.is-string(1);     // false
 ```
 
-## `is-color($value)` <Badge type="tip" text="function" />
+## `is-color($value)`
 
 Checks whether a value is a color. A quoted color is a string, not a color.
 
@@ -49,7 +49,7 @@ types.is-color(#008b8b);   // true
 types.is-color("#008b8b"); // false
 ```
 
-## `is-list($value)` <Badge type="tip" text="function" />
+## `is-list($value)`
 
 Checks whether a value is a list. A single value is not a list, and neither is a map.
 
@@ -64,7 +64,7 @@ types.is-list(());              // true
 types.is-list(("foo"));         // false
 ```
 
-## `is-map($value)` <Badge type="tip" text="function" />
+## `is-map($value)`
 
 Checks whether a value is a map. An empty list is not a map.
 
@@ -77,7 +77,7 @@ types.is-map(("foo": "bar")); // true
 types.is-map(());             // false
 ```
 
-## `is-boolean($value)` <Badge type="tip" text="function" />
+## `is-boolean($value)`
 
 Checks whether a value is `true` or `false`.
 
@@ -91,7 +91,7 @@ types.is-boolean("true"); // false
 types.is-boolean(null);   // false
 ```
 
-## `is-null($value)` <Badge type="tip" text="function" />
+## `is-null($value)`
 
 Checks whether a value is `null`. `false` and empty strings are not `null`.
 
