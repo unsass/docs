@@ -53,6 +53,6 @@ CSS relies on the modern Sass `if()` syntax, so a Dart Sass compiler **`>= 1.95.
 
 ## Next steps
 
-- [Configuration](/css/configuration) — work with CSS custom properties.
+- [Custom Properties](/css/configuration) — work with CSS custom properties.
 - [Mixins](/css/mixins) — the `declaration()` and `selector()` mixins in detail.
 - [Best Practices](/css/best-practices) — when to reach for each mixin.

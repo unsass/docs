@@ -226,7 +226,7 @@ export default defineConfig({
                 }
             ],
             '/breakpoint/': packageSidebar({ slug: 'breakpoint', configLabel: 'Configuration', hasFunctions: true }),
-            '/css/': packageSidebar({ slug: 'css', configLabel: 'Custom Properties', hasFunctions: false }),
+            '/css/': packageSidebar({ slug: 'css', configLabel: 'Custom Properties', hasFunctions: true }),
             '/em/': packageSidebar({ slug: 'em', hasFunctions: true }),
             '/rem/': packageSidebar({ slug: 'rem', configLabel: 'Configuration', hasFunctions: true }),
             '/selector/': packageSidebar({ slug: 'selector', hasFunctions: true }),
