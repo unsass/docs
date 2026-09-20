@@ -6,14 +6,23 @@ const hostname = 'https://unsass.dev';
 const ogImage = `${hostname}/og-image.png`;
 
 const changelog = (pkg: string) => `https://github.com/unsass/${pkg}/blob/main/CHANGELOG.md`;
+const monorepoChangelog = (pkg: string) => `https://github.com/unsass/unsass/blob/main/packages/${pkg}/CHANGELOG.md`;
 
 interface PackageSidebarOptions {
     slug: string;
     configLabel?: string;
     hasFunctions: boolean;
+    hasMixins?: boolean;
+    changelogLink?: string;
 }
 
-const packageSidebar = ({ slug, configLabel, hasFunctions }: PackageSidebarOptions) => [
+const packageSidebar = ({
+    slug,
+    configLabel,
+    hasFunctions,
+    hasMixins = true,
+    changelogLink = changelog(slug)
+}: PackageSidebarOptions) => [
     {
         text: 'Introduction',
         items: [
@@ -38,10 +47,12 @@ const packageSidebar = ({ slug, configLabel, hasFunctions }: PackageSidebarOptio
                     link: `/${slug}/functions`
                 }
             ] : []),
-            {
-                text: 'Mixins',
-                link: `/${slug}/mixins`
-            }
+            ...(hasMixins ? [
+                {
+                    text: 'Mixins',
+                    link: `/${slug}/mixins`
+                }
+            ] : [])
         ]
     },
     {
@@ -53,7 +64,7 @@ const packageSidebar = ({ slug, configLabel, hasFunctions }: PackageSidebarOptio
             },
             {
                 text: 'Changelog',
-                link: changelog(slug)
+                link: changelogLink
             }
         ]
     }
@@ -149,7 +160,10 @@ export default defineConfig({
                         { text: 'CSS', link: '/css/getting-started' },
                         { text: 'Em', link: '/em/getting-started' },
                         { text: 'Rem', link: '/rem/getting-started' },
-                        { text: 'Selector', link: '/selector/getting-started' }
+                        { text: 'Selector', link: '/selector/getting-started' },
+                        { text: 'String', link: '/string/getting-started' },
+                        { text: 'Types', link: '/types/getting-started' },
+                        { text: 'Var', link: '/var/getting-started' }
                     ]
                 }
             ],
@@ -173,13 +187,16 @@ export default defineConfig({
             },
             {
                 text: 'Packages',
-                activeMatch: '^/(breakpoint|css|em|rem|selector)/',
+                activeMatch: '^/(breakpoint|css|em|rem|selector|string|types|var)/',
                 items: [
                     { text: 'Breakpoint', link: '/breakpoint/getting-started', activeMatch: '^/breakpoint/' },
                     { text: 'CSS', link: '/css/getting-started', activeMatch: '^/css/' },
                     { text: 'Em', link: '/em/getting-started', activeMatch: '^/em/' },
                     { text: 'Rem', link: '/rem/getting-started', activeMatch: '^/rem/' },
-                    { text: 'Selector', link: '/selector/getting-started', activeMatch: '^/selector/' }
+                    { text: 'Selector', link: '/selector/getting-started', activeMatch: '^/selector/' },
+                    { text: 'String', link: '/string/getting-started', activeMatch: '^/string/' },
+                    { text: 'Types', link: '/types/getting-started', activeMatch: '^/types/' },
+                    { text: 'Var', link: '/var/getting-started', activeMatch: '^/var/' }
                 ]
             }
         ],
@@ -201,7 +218,10 @@ export default defineConfig({
                         { text: 'CSS', link: '/css/getting-started' },
                         { text: 'Em', link: '/em/getting-started' },
                         { text: 'Rem', link: '/rem/getting-started' },
-                        { text: 'Selector', link: '/selector/getting-started' }
+                        { text: 'Selector', link: '/selector/getting-started' },
+                        { text: 'String', link: '/string/getting-started' },
+                        { text: 'Types', link: '/types/getting-started' },
+                        { text: 'Var', link: '/var/getting-started' }
                     ]
                 }
             ],
@@ -209,7 +229,25 @@ export default defineConfig({
             '/css/': packageSidebar({ slug: 'css', configLabel: 'Custom Properties', hasFunctions: false }),
             '/em/': packageSidebar({ slug: 'em', hasFunctions: true }),
             '/rem/': packageSidebar({ slug: 'rem', configLabel: 'Configuration', hasFunctions: true }),
-            '/selector/': packageSidebar({ slug: 'selector', hasFunctions: true })
+            '/selector/': packageSidebar({ slug: 'selector', hasFunctions: true }),
+            '/string/': packageSidebar({
+                slug: 'string',
+                hasFunctions: true,
+                hasMixins: false,
+                changelogLink: monorepoChangelog('string')
+            }),
+            '/types/': packageSidebar({
+                slug: 'types',
+                hasFunctions: true,
+                hasMixins: false,
+                changelogLink: monorepoChangelog('types')
+            }),
+            '/var/': packageSidebar({
+                slug: 'var',
+                hasFunctions: true,
+                hasMixins: false,
+                changelogLink: monorepoChangelog('var')
+            })
         },
         socialLinks: [
             {

@@ -1,6 +1,6 @@
 ---
 layout: home
-description: "UnSass is a suite of small, dependency-free Sass utilities — breakpoint, css, em, rem and selector. Install only what you need."
+description: "UnSass is a suite of small, dependency-free Sass utilities — breakpoint, css, em, rem, selector, string, types and var. Install only what you need."
 
 hero:
   name: "by Front Factory"
@@ -50,5 +50,20 @@ features:
     title: Selector
     details: Build prefixed, suffixed and pseudo selectors from a single, expressive mixin.
     link: /selector/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17V11Q5 5 11 5M5 11H11V17H5" opacity="0.7"/><path d="M13 17V11Q13 5 19 5M13 11H19V17H13" opacity="0.7"/></svg>'
+    title: String
+    details: Replace, trim, test and combine strings with small, composable functions.
+    link: /string/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3" opacity="0.4"/><path d="M8 12.5L11 15.5L16.5 9"/></svg>'
+    title: Types
+    details: Check whether a value is a number, string, color, list, map, boolean or null.
+    link: /types/getting-started
+    linkText: Read the docs
+  - icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4Q3 12 8 20" opacity="0.7"/><path d="M16 4Q21 12 16 20" opacity="0.7"/><path d="M9.5 12H11.5M12.5 12H14.5"/></svg>'
+    title: Var
+    details: Create var() functions with a fallback and read their name and fallback back.
+    link: /var/getting-started
     linkText: Read the docs
 ---

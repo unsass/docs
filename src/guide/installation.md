@@ -25,7 +25,8 @@ pnpm add @unsass/breakpoint
 
 :::
 
-Swap `breakpoint` for any other package: `@unsass/css`, `@unsass/em`, `@unsass/rem`, `@unsass/selector`.
+Swap `breakpoint` for any other package: `@unsass/css`, `@unsass/em`, `@unsass/rem`, `@unsass/selector`, `@unsass/string`, `@unsass/types`,
+`@unsass/var`.
 
 ## Use a package
 

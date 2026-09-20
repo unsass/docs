@@ -16,10 +16,13 @@ versions independently, and emits plain, standard CSS — so you install only wh
 | **[@unsass/em](/em/getting-started)**                 | Context-relative pixel-to-`em` conversion.                    |
 | **[@unsass/rem](/rem/getting-started)**               | Baseline-relative pixel-to-`rem` conversion.                  |
 | **[@unsass/selector](/selector/getting-started)**     | Prefixed, suffixed and pseudo selector generation.            |
+| **[@unsass/string](/string/getting-started)**         | String manipulation: replace, trim, test and combine.         |
+| **[@unsass/types](/types/getting-started)**           | Value type checks: number, string, color, list, map and more. |
+| **[@unsass/var](/var/getting-started)**               | Creating and reading `var()` CSS functions.                   |
 
 Packages stay independent, but a few build on one another: `@unsass/em` and `@unsass/rem` use
-`@unsass/css` for their `declaration()` mixin. Such dependencies are installed automatically — you never add them by
-hand.
+`@unsass/css` for their `declaration()` mixin, `@unsass/selector` uses `@unsass/string` and `@unsass/types`, and
+`@unsass/var` uses `@unsass/string`. Such dependencies are installed automatically — you never add them by hand.
 
 ## Principles
 
