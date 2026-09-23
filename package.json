@@ -12,7 +12,7 @@
     },
     "devDependencies": {
         "@commitlint/cli": "^21.0.2",
-        "@commitlint/config-conventional": "^21.0.2",
+        "@commitlint/config-conventional": "^21.2.3",
         "@frontfactory/vitepress-theme": "^1.4.2",
         "husky": "^9.1.7",
         "vitepress": "^2.0.0-alpha.20",
