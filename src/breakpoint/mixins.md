@@ -1,4 +1,5 @@
 ---
+title: "Mixins – @unsass/breakpoint"
 description: "Reference for @unsass/breakpoint mixins: up, down, only, between and config for composable responsive media queries."
 ---
 

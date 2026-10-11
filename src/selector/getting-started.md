@@ -1,4 +1,5 @@
 ---
+title: "@unsass/selector: Selector helpers for Sass"
 description: "Get started with @unsass/selector: generate prefixed, suffixed and pseudo-class selectors from one Sass mixin."
 ---
 

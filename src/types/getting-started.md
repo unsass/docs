@@ -1,4 +1,5 @@
 ---
+title: "@unsass/types: Type checking for Sass"
 description: "Get started with @unsass/types: check whether a Sass value is a number, string, color, list, map, boolean or null."
 ---
 

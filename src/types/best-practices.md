@@ -1,4 +1,5 @@
 ---
+title: "Best Practices – @unsass/types"
 description: "Best practices for @unsass/types: validate input with @error, know how lists, maps and strings are detected, and prefer null checks over falsy tests."
 ---
 

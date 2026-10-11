@@ -1,4 +1,5 @@
 ---
+title: "@unsass/breakpoint: Responsive breakpoints in Sass"
 description: "Get started with @unsass/breakpoint: centralized, composable responsive breakpoints with up, down, only and between mixins."
 ---
 

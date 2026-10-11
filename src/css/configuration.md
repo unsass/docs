@@ -1,4 +1,5 @@
 ---
+title: "Custom Properties – @unsass/css"
 description: "Define and consume CSS custom properties with @unsass/css: create references with fallbacks through the declaration() mixin."
 ---
 

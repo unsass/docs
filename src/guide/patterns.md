@@ -1,4 +1,5 @@
 ---
+title: "Real-World Sass Patterns"
 description: "Real-world patterns combining UnSass packages: responsive rem sizing, themeable custom properties, responsive utility classes and em scales."
 ---
 

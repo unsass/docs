@@ -1,4 +1,5 @@
 ---
+title: "Functions – @unsass/types"
 description: "Reference for @unsass/types functions: is-number, is-string, is-color, is-list, is-map, is-boolean and is-null."
 ---
 

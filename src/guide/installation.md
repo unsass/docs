@@ -1,4 +1,5 @@
 ---
+title: "Install UnSass Packages with npm"
 description: "Install UnSass packages from npm with npm, yarn or pnpm, import them via the Sass module system, and configure them on use."
 ---
 

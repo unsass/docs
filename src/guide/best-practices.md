@@ -1,4 +1,5 @@
 ---
+title: "Sass Best Practices with UnSass"
 description: "Cross-package best practices for UnSass: namespacing, configuring on import, centralizing configuration and keeping generated CSS lean."
 ---
 

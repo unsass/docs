@@ -1,4 +1,5 @@
 ---
+title: "@unsass/string: String functions for Sass"
 description: "Get started with @unsass/string: replace, trim, test and combine strings with small, composable Sass functions."
 ---
 

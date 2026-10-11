@@ -1,4 +1,5 @@
 ---
+title: "Functions – @unsass/breakpoint"
 description: "Reference for @unsass/breakpoint functions: get-value, get-next, get-prev and get-screens for reading the configured breakpoint tokens."
 ---
 

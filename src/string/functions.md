@@ -1,4 +1,5 @@
 ---
+title: "Functions – @unsass/string"
 description: "Reference for @unsass/string functions: replace, to-number, from-number, starts-with, ends-with, trim-start, trim-end, trim and combine."
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Best Practices – @unsass/selector"
 description: "Best practices for @unsass/selector: target classes, avoid mixing suffix with pseudo selectors and keep one separator convention."
 ---
 

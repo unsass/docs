@@ -1,4 +1,5 @@
 ---
+title: "Functions – @unsass/rem"
 description: "Reference for @unsass/rem: the convert() function for baseline-relative pixel-to-rem conversion."
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Functions – @unsass/var"
 description: "Reference for @unsass/var functions: create, create-name, name, fallback and parse for building and reading var() CSS functions."
 ---
 

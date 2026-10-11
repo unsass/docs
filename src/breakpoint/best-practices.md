@@ -1,4 +1,5 @@
 ---
+title: "Best Practices – @unsass/breakpoint"
 description: "Best practices for @unsass/breakpoint: mobile-first usage, semantic token names, shallow nesting and lean media queries."
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Functions – @unsass/selector"
 description: "Reference for @unsass/selector functions: pseudo-class, pseudo-element, is, where, has, exclude, to-class and to-id selector helpers."
 ---
 

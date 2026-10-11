@@ -1,4 +1,5 @@
 ---
+title: "Mixins – @unsass/rem"
 description: "Reference for @unsass/rem mixins: declaration(), baseline() and config() for rem-based sizing."
 ---
 

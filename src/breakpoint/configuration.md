@@ -1,4 +1,5 @@
 ---
+title: "Configuration – @unsass/breakpoint"
 description: "Configure @unsass/breakpoint: override or extend breakpoint tokens with $screens, $reset and the config() mixin."
 ---
 

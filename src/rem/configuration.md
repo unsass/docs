@@ -1,4 +1,5 @@
 ---
+title: "Configuration – @unsass/rem"
 description: "Configure @unsass/rem: set the $baseline reference or change it at runtime with the config() mixin."
 ---
 

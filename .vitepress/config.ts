@@ -130,7 +130,7 @@ export default defineConfig({
                     ...segments.map((_, i) => ({
                         '@type': 'ListItem',
                         position: i + 2,
-                        name: i === segments.length - 1 ? pageData.title : segments[i] === 'guide' ? 'Guide' : `@unsass/${segments[i]}`,
+                        name: i === segments.length - 1 ? segments[i].replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()) : segments[i] === 'guide' ? 'Guide' : `@unsass/${segments[i]}`,
                         item: i === segments.length - 1
                             ? canonical
                             : `${hostname}/${segments[i]}/${segments[i] === 'guide' ? 'what-is-unsass' : 'getting-started'}`

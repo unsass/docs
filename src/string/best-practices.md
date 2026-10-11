@@ -1,4 +1,5 @@
 ---
+title: "Best Practices – @unsass/string"
 description: "Best practices for @unsass/string: replace safely, trim one occurrence at a time, skip optional parts with combine() and reuse built-ins."
 ---
 
