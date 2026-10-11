@@ -109,6 +109,13 @@ export default defineConfig({
             })
         ]
     ],
+    transformHead({ assets }) {
+        const font = assets.find((file) => /montserrat-latin-wght-normal.*\.woff2$/.test(file));
+
+        return font
+            ? [['link', { rel: 'preload', href: font, as: 'font', type: 'font/woff2', crossorigin: '' }]]
+            : [];
+    },
     transformPageData(pageData) {
         const path = pageData.relativePath
             .replace(/index\.md$/, '')
