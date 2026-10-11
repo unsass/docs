@@ -1,5 +1,7 @@
 ---
 layout: home
+title: UnSass – Standalone Sass utilities
+titleTemplate: false
 description: "UnSass is a suite of small, dependency-free Sass utilities — breakpoint, css, em, rem, selector, string, types and var. Install only what you need."
 
 hero:

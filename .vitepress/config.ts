@@ -115,7 +115,7 @@ export default defineConfig({
             .replace(/\.md$/, '');
         const canonical = `${hostname}/${path}`;
         const isHome = pageData.frontmatter.layout === 'home';
-        const title = isHome || !pageData.title ? 'UnSass' : `${pageData.title} | UnSass`;
+        const title = isHome ? pageData.title : !pageData.title ? 'UnSass' : `${pageData.title} | UnSass`;
         const desc = pageData.frontmatter.description || pageData.description || description;
 
         const segments = path.split('/').filter(Boolean);
