@@ -181,6 +181,10 @@ export default defineConfig({
         outline: [2, 3],
         ff: {
             navOrder: 'menu-first',
+            meta: {
+                readingTime: false,
+                lastUpdated: false
+            },
             footerColumns: [
                 {
                     title: 'Guide',
