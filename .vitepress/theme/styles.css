@@ -10,7 +10,7 @@
     --ff-color-accent-soft: rgba(0, 139, 139, 0.09);
     --ff-color-accent-glow: rgba(0, 139, 139, 0.16);
 
-    --ff-font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --ff-font-display: 'Montserrat Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
 .dark {

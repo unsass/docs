@@ -2,6 +2,7 @@ import { h } from 'vue';
 import Theme from '@frontfactory/vitepress-theme';
 import NotFound from './NotFound.vue';
 import HeroCanvas from './components/HeroCanvas.vue';
+import '@fontsource-variable/montserrat/wght.css';
 import './styles.css';
 
 export default {

@@ -4,6 +4,7 @@ import baseConfig from '@frontfactory/vitepress-theme/config';
 const description = 'A suite of small, dependency-free Sass utilities. Install only what you need.';
 const hostname = 'https://unsass.dev';
 const ogImage = `${hostname}/og-image.png`;
+const ogImageAlt = 'UnSass — standalone Sass utilities, à la carte';
 
 const changelog = (pkg: string) => `https://github.com/unsass/${pkg}/blob/main/CHANGELOG.md`;
 const monorepoChangelog = (pkg: string) => `https://github.com/unsass/unsass/blob/main/packages/${pkg}/CHANGELOG.md`;
@@ -85,15 +86,6 @@ export default defineConfig({
         ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
         ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: 'any' }],
         ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
-        ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-        ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-        [
-            'link',
-            {
-                rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'
-            }
-        ],
         ['meta', { name: 'theme-color', content: '#008b8b' }],
         ['meta', { property: 'og:type', content: 'website' }],
         ['meta', { property: 'og:site_name', content: 'UnSass' }],
@@ -101,8 +93,10 @@ export default defineConfig({
         ['meta', { property: 'og:image', content: ogImage }],
         ['meta', { property: 'og:image:width', content: '1200' }],
         ['meta', { property: 'og:image:height', content: '630' }],
+        ['meta', { property: 'og:image:alt', content: ogImageAlt }],
         ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
         ['meta', { name: 'twitter:image', content: ogImage }],
+        ['meta', { name: 'twitter:image:alt', content: ogImageAlt }],
         [
             'script',
             { type: 'application/ld+json' },
@@ -124,7 +118,44 @@ export default defineConfig({
         const title = isHome || !pageData.title ? 'UnSass' : `${pageData.title} | UnSass`;
         const desc = pageData.frontmatter.description || pageData.description || description;
 
+        const segments = path.split('/').filter(Boolean);
+        const schemas: object[] = [];
+
+        if (!isHome && segments.length > 0) {
+            schemas.push({
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'UnSass', item: hostname },
+                    ...segments.map((_, i) => ({
+                        '@type': 'ListItem',
+                        position: i + 2,
+                        name: i === segments.length - 1 ? pageData.title : segments[i] === 'guide' ? 'Guide' : `@unsass/${segments[i]}`,
+                        item: i === segments.length - 1
+                            ? canonical
+                            : `${hostname}/${segments[i]}/${segments[i] === 'guide' ? 'what-is-unsass' : 'getting-started'}`
+                    }))
+                ]
+            });
+        }
+
+        if (segments.length === 2 && segments[1] === 'getting-started') {
+            schemas.push({
+                '@context': 'https://schema.org',
+                '@type': 'SoftwareSourceCode',
+                name: `@unsass/${segments[0]}`,
+                description: desc,
+                url: canonical,
+                codeRepositoryUrl: 'https://github.com/unsass/unsass',
+                programmingLanguage: 'Sass',
+                license: 'https://opensource.org/licenses/MIT'
+            });
+        }
+
         pageData.frontmatter.head ??= [];
+        schemas.forEach((schema) => {
+            pageData.frontmatter.head.push(['script', { type: 'application/ld+json' }, JSON.stringify(schema)]);
+        });
         pageData.frontmatter.head.push(
             ['link', { rel: 'canonical', href: canonical }],
             ['meta', { property: 'og:title', content: title }],
