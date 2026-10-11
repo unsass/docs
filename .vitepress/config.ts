@@ -1,3 +1,5 @@
+import { execFileSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { defineConfig } from 'vitepress';
 import baseConfig from '@frontfactory/vitepress-theme/config';
 
@@ -80,7 +82,20 @@ export default defineConfig({
     cleanUrls: true,
     lastUpdated: true,
     sitemap: {
-        hostname
+        hostname,
+        // Pages no longer carry a last-updated date (the footer stamp is hidden), so the
+        // sitemap reads each source file's last commit date instead.
+        transformItems(items) {
+            return items.map((item) => {
+                const slug = item.url.replace(/\/$/, '') || 'index';
+                const file = [`src/${slug}.md`, `src/${slug}/index.md`].find((candidate) => existsSync(candidate));
+                const date = file
+                    ? execFileSync('git', ['log', '-1', '--format=%cI', '--', file], { encoding: 'utf8' }).trim()
+                    : '';
+
+                return date ? { ...item, lastmod: date } : item;
+            });
+        }
     },
     head: [
         ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
@@ -159,6 +174,8 @@ export default defineConfig({
             });
         }
 
+        // The default theme prints the footer stamp whenever this is set.
+        delete pageData.lastUpdated;
         pageData.frontmatter.head ??= [];
         schemas.forEach((schema) => {
             pageData.frontmatter.head.push(['script', { type: 'application/ld+json' }, JSON.stringify(schema)]);
@@ -213,13 +230,6 @@ export default defineConfig({
         },
         search: {
             provider: 'local'
-        },
-        lastUpdated: {
-            text: 'Last updated'
-        },
-        editLink: {
-            pattern: 'https://github.com/unsass/docs/edit/main/src/:path',
-            text: 'Edit this page on GitHub'
         },
         nav: [
             {
