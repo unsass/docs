@@ -18,6 +18,11 @@ Builds a custom-property reference. A leading `--` is added automatically if you
 | `$name`     | `string` | —       | The variable name, with or without `--`.            |
 | `$fallback` | `any`    | `null`  | Optional fallback value (may be another reference). |
 
+```scss
+cp.create("brand", darkcyan);   // (varname: --brand, fallback: darkcyan)
+cp.create("--brand", darkcyan); // same reference
+```
+
 ## `cp.get-varname($custom-prop)`
 
 Returns the custom property name, including the leading `--`.

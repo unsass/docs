@@ -53,15 +53,13 @@ Emits a root `font-size` that maps `1rem` to the configured baseline. With the d
 ```scss [SCSS]
 @use "@unsass/rem";
 
-html,
-body {
+html {
     @include rem.baseline;
 }
 ```
 
 ```css [CSS]
-html,
-body {
+html {
     font-size: 100%;
 }
 ```

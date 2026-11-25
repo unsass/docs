@@ -59,7 +59,8 @@ Packages that expose configuration accept it through `@use ... with (...)`:
 );
 ```
 
-See each package's **Configuration** page for the available options.
+See the [Breakpoint](/breakpoint/configuration) and [Rem](/rem/configuration) **Configuration** pages for the
+available options.
 
 ::: tip Centralize configuration
 For a single source of truth, forward configured packages from one file and `@use` that file everywhere. See
@@ -69,4 +70,4 @@ For a single source of truth, forward configured packages from one file and `@us
 ## Requirements
 
 - A Dart Sass compiler using the module system (`@use` / `@forward`).
-- Dart Sass **`>= 1.95.0`** for every package (modern `if()` syntax).
+- Dart Sass **`>= 1.95.0`** for every package (most of them rely on the modern `if()` syntax).

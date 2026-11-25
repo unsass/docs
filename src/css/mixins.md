@@ -33,7 +33,7 @@ parentheses). Also integrates with [custom properties](/css/configuration).
 ```css [CSS]
 .foo {
     color: darkcyan;
-    box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
+    box-shadow: 0 0 10px 5px rgba(0, 139, 139, 0.75), inset 0 0 10px 5px rgba(0, 139, 139, 0.75);
 }
 ```
 

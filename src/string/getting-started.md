@@ -11,7 +11,7 @@ convert between strings and numbers, and combine class-like names.
 It also forwards the Sass built-in [`sass:string`](https://sass-lang.com/documentation/modules/string) functions, so
 `string.length()`, `string.slice()` and friends are available through the same namespace.
 
-> Repository: [github.com/unsass/unsass](https://github.com/unsass/unsass/tree/main/packages/string)
+> Repository: [github.com/unsass/unsass/tree/main/packages/string](https://github.com/unsass/unsass/tree/main/packages/string)
 
 ## Install
 
@@ -29,6 +29,11 @@ yarn add @unsass/string
 pnpm add @unsass/string
 ```
 
+:::
+
+::: warning Requirement
+String builds on [`@unsass/types`](/types/getting-started) (installed automatically) and requires a Dart Sass compiler
+**`>= 1.95.0`**.
 :::
 
 ## Basic usage

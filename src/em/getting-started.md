@@ -60,5 +60,5 @@ The last argument is always the context.
 
 ## Next steps
 
-- [Functions](/em/functions) and [Mixins](/em/mixins) — the `convert()` function and `declaration()` mixin in detail.
+- [Functions](/em/functions) and [Mixins](/em/mixins) — the full API.
 - [Best Practices](/em/best-practices) — choosing the right context.

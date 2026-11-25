@@ -25,7 +25,7 @@ Build the value with `create()` and a fallback if you intend to read it back:
 ```scss
 $color: var.create("primary-color", darkcyan);
 
-var.fallback($color); // "darkcyan"
+var.fallback($color); // darkcyan
 ```
 
 ## Keep fallbacks meaningful
@@ -43,6 +43,6 @@ and read the map:
 
 $parts: var.parse(var(--primary-color, darkcyan));
 
-map.get($parts, "name");     // "--primary-color"
-map.get($parts, "fallback"); // "darkcyan"
+map.get($parts, "name");     // --primary-color
+map.get($parts, "fallback"); // darkcyan
 ```

@@ -45,8 +45,8 @@ Returns a custom property name, prefixed with `--` when the prefix is missing.
 | `$name`   | `string` | —       | The variable name, with or without the `--`. |
 
 ```scss
-var.create-name("primary-color");   // "--primary-color"
-var.create-name("--primary-color"); // "--primary-color"
+var.create-name("primary-color");   // --primary-color
+var.create-name("--primary-color"); // --primary-color
 ```
 
 ## `name($var)`
@@ -58,7 +58,7 @@ Returns the name of a `var()` function.
 | `$var`    | `string` | —       | A `var()` function that has a fallback. |
 
 ```scss
-var.name(var(--primary-color, darkcyan)); // "--primary-color"
+var.name(var(--primary-color, darkcyan)); // --primary-color
 ```
 
 ## `fallback($var)`
@@ -70,7 +70,7 @@ Returns the fallback of a `var()` function.
 | `$var`    | `string` | —       | A `var()` function that has a fallback. |
 
 ```scss
-var.fallback(var(--primary-color, darkcyan)); // "darkcyan"
+var.fallback(var(--primary-color, darkcyan)); // darkcyan
 ```
 
 ## `parse($var)`
@@ -83,7 +83,7 @@ Returns a map with the `name` and `fallback` keys of a `var()` function.
 
 ```scss
 var.parse(var(--primary-color, darkcyan));
-// ("name": "--primary-color", "fallback": "darkcyan")
+// ("name": --primary-color, "fallback": darkcyan)
 ```
 
 ::: warning

@@ -13,14 +13,14 @@ Accessed through the `rem` namespace (`@use "@unsass/rem"`). Conversions use the
 Converts pixel values to `rem`. Accepts single values, space-separated lists, and comma-separated lists. Unitless
 numbers are treated as pixels; keywords, colors and `0` pass through untouched.
 
+| Parameter  | Type      | Default | Description              |
+|------------|-----------|---------|--------------------------|
+| `$values…` | `arglist` | —       | The value(s) to convert. |
+
 ::: warning
 A value with a unit other than `px` (`%`, `em`, `vw`…) raises a compile-time error — leave those out of the
 conversion.
 :::
-
-| Parameter  | Type      | Default | Description              |
-|------------|-----------|---------|--------------------------|
-| `$values…` | `arglist` | —       | The value(s) to convert. |
 
 ::: code-group
 

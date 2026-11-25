@@ -97,7 +97,7 @@ Pass a list to `$scope` to chain several keys — in order, before (or after, wi
 ```
 
 ```css [CSS]
-.sm:md:foo {
+.sm\:md\:foo {
     color: darkcyan;
 }
 ```

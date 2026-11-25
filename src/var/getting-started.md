@@ -8,7 +8,7 @@ description: "Get started with @unsass/var: create var() CSS functions with an o
 `@unsass/var` is a Sass toolkit for working with the `var()` CSS function. Create `var()` calls with an optional
 fallback, then read their name and fallback back so custom-property logic stays readable and consistent.
 
-> Repository: [github.com/unsass/unsass](https://github.com/unsass/unsass/tree/main/packages/var)
+> Repository: [github.com/unsass/unsass/tree/main/packages/var](https://github.com/unsass/unsass/tree/main/packages/var)
 
 ## Install
 
@@ -28,7 +28,10 @@ pnpm add @unsass/var
 
 :::
 
-`@unsass/var` builds on [`@unsass/string`](/string/getting-started), which is installed automatically.
+::: warning Requirement
+Var builds on [`@unsass/string`](/string/getting-started) (installed automatically) and requires a Dart Sass compiler
+**`>= 1.95.0`**.
+:::
 
 ## Basic usage
 

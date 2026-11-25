@@ -36,8 +36,8 @@ combine them. Pick one per call:
 
 ## Keep one separator convention
 
-The default `:` mirrors common utility-class ecosystems. Choose one separator for the whole project so generated
-class names stay predictable and easy to escape in markup.
+The default `:` mirrors utility-first frameworks such as Tailwind CSS. Choose one `$separator` for the whole project
+so generated class names stay predictable and easy to escape in markup.
 
 ## Use `$root` to escape nesting
 

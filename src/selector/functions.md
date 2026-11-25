@@ -19,7 +19,7 @@ Appends a pseudo-class to a selector string.
 | `$pseudo-class` | `string` | —       | The pseudo-class name. |
 
 ```scss
-selector.pseudo-class(".foo", "hover"); // ".foo:hover"
+selector.pseudo-class(".foo", "hover"); // .foo:hover
 ```
 
 ## `pseudo-element($selector, $pseudo-element)`
@@ -32,7 +32,7 @@ Appends a pseudo-element to a selector string.
 | `$pseudo-element` | `string` | —       | The pseudo-element name. |
 
 ```scss
-selector.pseudo-element(".foo", "before"); // ".foo::before"
+selector.pseudo-element(".foo", "before"); // .foo::before
 ```
 
 ## `is($selector, $args...)`
@@ -45,7 +45,7 @@ Appends an `:is()` pseudo-class matching any of the given selectors.
 | `$args…`    | `arglist` | —       | One or more selectors to match. |
 
 ```scss
-selector.is("article", "h1", "h2"); // "article:is(h1, h2)"
+selector.is("article", "h1", "h2"); // article:is(h1, h2)
 ```
 
 ## `where($selector, $args...)`
@@ -58,7 +58,7 @@ Appends a `:where()` pseudo-class — like `:is()`, but with zero specificity.
 | `$args…`    | `arglist` | —       | One or more selectors to match. |
 
 ```scss
-selector.where(".prose", "a", "button"); // ".prose:where(a, button)"
+selector.where(".prose", "a", "button"); // .prose:where(a, button)
 ```
 
 ## `has($selector, $args...)`
@@ -71,7 +71,7 @@ Appends a `:has()` pseudo-class matching elements that contain the given relativ
 | `$args…`    | `arglist` | —       | One or more relative selectors to look for. |
 
 ```scss
-selector.has(".card", "> img"); // ".card:has(> img)"
+selector.has(".card", "> img"); // .card:has(> img)
 ```
 
 ## `exclude($selector, $args...)`
@@ -85,7 +85,7 @@ keyword.
 | `$args…`    | `arglist` | —       | One or more selectors to exclude. |
 
 ```scss
-selector.exclude(".btn", ".btn--disabled"); // ".btn:not(.btn--disabled)"
+selector.exclude(".btn", ".btn--disabled"); // .btn:not(.btn--disabled)
 ```
 
 ## `to-class($name)`

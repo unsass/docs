@@ -42,15 +42,15 @@ a Sass error.
 
 ## `from-number($value)`
 
-Converts a number to a string. A unit, if any, is kept.
+Converts a number to an unquoted string. A unit, if any, is kept.
 
 | Parameter | Type     | Default | Description            |
 |-----------|----------|---------|------------------------|
 | `$value`  | `number` | —       | The number to convert. |
 
 ```scss
-string.from-number(10);   // "10"
-string.from-number(10px); // "10px"
+string.from-number(10);   // 10
+string.from-number(10px); // 10px
 ```
 
 ## `starts-with($string, $substring)`

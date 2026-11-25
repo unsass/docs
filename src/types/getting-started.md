@@ -11,7 +11,7 @@ readable predicate, so conditions and input validation stay concise and consiste
 It is the building block behind the input checks of other UnSass packages, and it is just as handy in your own
 functions and mixins.
 
-> Repository: [github.com/unsass/unsass](https://github.com/unsass/unsass/tree/main/packages/types)
+> Repository: [github.com/unsass/unsass/tree/main/packages/types](https://github.com/unsass/unsass/tree/main/packages/types)
 
 ## Install
 
@@ -29,6 +29,10 @@ yarn add @unsass/types
 pnpm add @unsass/types
 ```
 
+:::
+
+::: warning Requirement
+Types requires a Dart Sass compiler **`>= 1.95.0`**.
 :::
 
 ## Basic usage

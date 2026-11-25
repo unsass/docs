@@ -1,5 +1,5 @@
 # unsass.dev
 
-Documentation for Unsass.
+Documentation for UnSass.
 
 https://unsass.dev
