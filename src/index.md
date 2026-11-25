@@ -8,6 +8,10 @@ hero:
   name: "by Front Factory"
   text: "Standalone Sass utilities, à la carte."
   tagline: "Modular. Validated. Dependency-free."
+  image:
+    light: /hero-illustration.svg
+    dark: /hero-illustration-dark.svg
+    alt: ""
   command:
     - label: Breakpoint
       value: npm install @unsass/breakpoint

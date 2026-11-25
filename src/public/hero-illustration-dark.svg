@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" fill="none">
+    <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#6a89a7" stop-opacity="0.45" />
+            <stop offset="1" stop-color="#9fb4c9" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+            <stop offset=".35" stop-color="#fff" />
+            <stop offset="1" stop-color="#000" />
+        </radialGradient>
+        <mask id="dotmask"><rect width="440" height="440" fill="url(#fade)" /></mask>
+        <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" fill="#3a3731" />
+        </pattern>
+        <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0.08" />
+            <stop offset=".5" stop-color="#fff" stop-opacity="0" />
+        </linearGradient>
+        <!-- Right half of the plate: its edge and underside take the darker shade -->
+        <clipPath id="right"><rect x="0" y="-500" width="500" height="1000" /></clipPath>
+        <filter id="blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9" /></filter>
+        <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="30" /></filter>
+    </defs>
+
+    <style>
+        @media (prefers-reduced-motion: no-preference) {
+            .float { animation: float 7s ease-in-out infinite; }
+            .float-2 { animation: float 7s ease-in-out -2.5s infinite; }
+        }
+        @keyframes float { 50% { transform: translateY(-7px); } }
+    </style>
+
+    <!-- Dotted grid, fading out toward the edges -->
+    <rect width="440" height="440" fill="url(#dots)" mask="url(#dotmask)" />
+
+    <!-- Accent glow behind the stack, plus rings on the ground plane -->
+    <circle cx="220" cy="215" r="150" fill="url(#glow)" filter="url(#soft)" />
+    <ellipse cx="220" cy="318" rx="165" ry="95" stroke="#9fb4c9" stroke-opacity=".55" stroke-dasharray="2 5" />
+    <ellipse cx="220" cy="318" rx="120" ry="69" stroke="#9fb4c9" stroke-opacity=".3" />
+
+    <!-- Plates, bottom to top: the packages, crowned by the logo -->
+    <g transform="translate(220 282)">
+        <g>
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(10 18) matrix(1 .5 -1 .5 0 0)" fill="#000" opacity="0.55" filter="url(#blur)"/>
+            <rect x="-141.8" y="0" width="141.8" height="8" fill="#67737f"/>
+            <rect x="0" y="0" width="141.8" height="8" fill="#8090a0"/>
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#67737f"/>
+            <g clip-path="url(#right)"><rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#8090a0"/></g>
+            <g transform="matrix(1 .5 -1 .5 0 0)">
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="#3c4248" stroke="#606b76" stroke-width="1.25"/>
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="url(#sheen)"/>
+                
+            </g>
+        </g>
+    </g>
+    <g transform="translate(220 230)">
+        <g>
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(10 18) matrix(1 .5 -1 .5 0 0)" fill="#000" opacity="0.55" filter="url(#blur)"/>
+            <rect x="-141.8" y="0" width="141.8" height="8" fill="#5b6670"/>
+            <rect x="0" y="0" width="141.8" height="8" fill="#758392"/>
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#5b6670"/>
+            <g clip-path="url(#right)"><rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#758392"/></g>
+            <g transform="matrix(1 .5 -1 .5 0 0)">
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="#313539" stroke="#606b76" stroke-width="1.25"/>
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="url(#sheen)"/>
+                <path d="M0 34h58" stroke="#9fb4c9" stroke-width="6" stroke-linecap="round"/><path d="M0 48h40" stroke="#434a51" stroke-width="6" stroke-linecap="round"/><path d="M0 62h50" stroke="#434a51" stroke-width="6" stroke-linecap="round"/>
+            </g>
+        </g>
+    </g>
+    <g transform="translate(220 178)">
+        <g class="float-2">
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(10 18) matrix(1 .5 -1 .5 0 0)" fill="#000" opacity="0.55" filter="url(#blur)"/>
+            <rect x="-141.8" y="0" width="141.8" height="8" fill="#505961"/>
+            <rect x="0" y="0" width="141.8" height="8" fill="#697683"/>
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#505961"/>
+            <g clip-path="url(#right)"><rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#697683"/></g>
+            <g transform="matrix(1 .5 -1 .5 0 0)">
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="#26282a" stroke="#606b76" stroke-width="1.25"/>
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="url(#sheen)"/>
+                <path d="M0 34h40" stroke="#9fb4c9" stroke-width="6" stroke-linecap="round"/><path d="M0 48h60" stroke="#434a51" stroke-width="6" stroke-linecap="round"/><path d="M0 62h30" stroke="#434a51" stroke-width="6" stroke-linecap="round"/>
+            </g>
+        </g>
+    </g>
+    <g transform="translate(220 126)">
+        <g class="float">
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(10 18) matrix(1 .5 -1 .5 0 0)" fill="#000" opacity="0.55" filter="url(#blur)"/>
+            <rect x="-141.8" y="0" width="141.8" height="8" fill="#3c4248"/>
+            <rect x="0" y="0" width="141.8" height="8" fill="#565f69"/>
+            <rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#3c4248"/>
+            <g clip-path="url(#right)"><rect x="-75" y="-75" width="150" height="150" rx="14" transform="translate(0 8) matrix(1 .5 -1 .5 0 0)" fill="#565f69"/></g>
+            <g transform="matrix(1 .5 -1 .5 0 0)">
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="#121110" stroke="#606b76" stroke-width="1.25"/>
+                <rect x="-75" y="-75" width="150" height="150" rx="14" fill="url(#sheen)"/>
+                <g fill="#9fb4c9"><rect x="-44" y="-44" width="40" height="40" rx="10"/><rect x="4" y="-44" width="40" height="40" rx="10" opacity=".4"/><rect x="-44" y="4" width="40" height="40" rx="10" opacity=".4"/><rect x="4" y="4" width="40" height="40" rx="10"/></g>
+            </g>
+        </g>
+    </g>
+</svg>
