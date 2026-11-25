@@ -101,7 +101,7 @@ export default defineConfig({
         ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
         ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: 'any' }],
         ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
-        ['meta', { name: 'theme-color', content: '#008b8b' }],
+        ['meta', { name: 'theme-color', content: '#6a89a7' }],
         ['meta', { property: 'og:type', content: 'website' }],
         ['meta', { property: 'og:site_name', content: 'UnSass' }],
         ['meta', { property: 'og:locale', content: 'en_US' }],

@@ -1,24 +1,27 @@
 /* ============================================================================================= */
 /*                                        UNSASS — THEME                                          */
-/*  Rebrands @frontfactory/vitepress-theme with the UnSass accent (darkcyan / teal) and display   */
+/*  Rebrands @frontfactory/vitepress-theme with the UnSass accent (slate blue #6a89a7) and display */
 /*  font. Every value is a --ff-* custom property — see the theme's README for the full list.     */
 /* ============================================================================================= */
 
+/* #6a89a7 is the brand colour (logo, favicon, og-image). On the light paper it only reaches 3.5:1,  */
+/* so text and buttons use a darker shade of the same hue to pass WCAG AA (4.74:1; white on it      */
+/* 4.95:1); hover goes darker still. The dark theme's tint already clears 8.8:1.                    */
 :root {
-    --ff-color-accent: #008b8b;
-    --ff-color-accent-hover: #0aa1a1;
-    --ff-color-accent-soft: rgba(0, 139, 139, 0.09);
-    --ff-color-accent-glow: rgba(0, 139, 139, 0.16);
+    --ff-color-accent: #56738f;
+    --ff-color-accent-hover: #4f6a85;
+    --ff-color-accent-soft: rgba(106, 137, 167, 0.09);
+    --ff-color-accent-glow: rgba(106, 137, 167, 0.16);
 
     --ff-font-display: 'Montserrat Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
 .dark {
-    --ff-color-accent: #2dd4cf;
-    --ff-color-accent-hover: #5eb1c7;
+    --ff-color-accent: #9fb4c9;
+    --ff-color-accent-hover: #b7c8d9;
     --ff-color-accent-contrast: #06121e;
-    --ff-color-accent-soft: rgba(45, 212, 207, 0.13);
-    --ff-color-accent-glow: rgba(45, 212, 207, 0.2);
+    --ff-color-accent-soft: rgba(159, 180, 201, 0.13);
+    --ff-color-accent-glow: rgba(159, 180, 201, 0.2);
 }
 
 /* Feature cards: the icon reads too small next to the numbered index — match its 2rem size.     */
