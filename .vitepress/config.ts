@@ -9,7 +9,8 @@ const ogImage = `${hostname}/og-image.png`;
 const ogImageAlt = 'UnSass — standalone Sass utilities, à la carte';
 
 const changelog = (pkg: string) => `https://github.com/unsass/${pkg}/blob/main/CHANGELOG.md`;
-const monorepoChangelog = (pkg: string) => `https://github.com/unsass/unsass/blob/main/packages/${pkg}/CHANGELOG.md`;
+const monorepoPackages = ['string', 'types', 'var'];
+const monorepoChangelog =(pkg: string) => `https://github.com/unsass/unsass/blob/main/packages/${pkg}/CHANGELOG.md`;
 
 interface PackageSidebarOptions {
     slug: string;
@@ -168,7 +169,9 @@ export default defineConfig({
                 name: `@unsass/${segments[0]}`,
                 description: desc,
                 url: canonical,
-                codeRepositoryUrl: 'https://github.com/unsass/unsass',
+                codeRepositoryUrl: monorepoPackages.includes(segments[0])
+                    ? `https://github.com/unsass/unsass/tree/main/packages/${segments[0]}`
+                    : `https://github.com/unsass/${segments[0]}`,
                 programmingLanguage: 'Sass',
                 license: 'https://opensource.org/licenses/MIT'
             });
